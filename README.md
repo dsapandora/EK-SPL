@@ -42,10 +42,12 @@ To flash the robot, it must be connected to a power supply and turn off:
 	qibuild config --wizard
 	```
 6. Download the repo and initializate the working directory
+
 	```bash
 	qibuild init
 	```
 7. Configurate compilers
+
 	```bash
 	qitoolchain create cross-atom ~/[...]/linux64-nao-atom-cross-toolchain-1.14.5/toolchain.xml
 	```
