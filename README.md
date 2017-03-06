@@ -16,9 +16,9 @@ sudo ./flasher
 ```
 To flash the robot, it must be connected to a power supply and turn off:
 
-1.Connect the USB to the NAO
-2.Turn on NAO holding the button for 5 seconds (until the botton turns blue)
-3.Wait and follow NAO instructions
+1. Connect the USB to the NAO
+2. Turn on NAO holding the button for 5 seconds (until the botton turns blue)
+3. Wait and follow NAO instructions
 
 
 ## Install SDK
@@ -29,9 +29,10 @@ To flash the robot, it must be connected to a power supply and turn off:
 	* qibuild-1.14.3
 	* linux64-nao-atom-cross-toolchain-1.14.5
 4. Install qibuild
-	```
+	```bash
 	cd ~/qibuild-1.14.3/
 	./install-qibuild.sh
+	```
 5. Configure qibuild with the following options:
 	1. Unix Makefiles
 	2. default
@@ -58,7 +59,7 @@ qibuild make -c cross-atom
 ## Upload code to the robot
 Use scp to upload the compiled code to the robot.
 
-Edit home/nao/naoqi/preferences/autoload.ini and under [user], add the lines/home/nao/lib[MODULE_NAME].so
+Edit home/nao/naoqi/preferences/autoload.ini and under [user], add the line: /home/nao/lib[MODULE_NAME].so for each module.
 
 
 
