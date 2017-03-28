@@ -117,7 +117,7 @@ void Goalkeeper::ballDetected()
     //fMotionProxy.setWalkTargetVelocity(0.0,(float)fState[3][1],(float)fState[3][2],0.1);
     //std::cout << "Seconds: " << (float)fState[4][0] << std::endl;
     //std::cout << "Miccros: " << (float)fState[4][1] << std::endl;
-    
+
   }
   else
   {
@@ -141,7 +141,7 @@ void Goalkeeper::ballDetected()
     //}
     //fMotionProxy.setStiffnesses("Head", 0.0);
     //fMotionProxy.setStiffnesses("Body", 0.0);
-    
+
 /**
         if ((float)fState[2][2] > 1)
         {
@@ -163,4 +163,3 @@ void Goalkeeper::ballDetected()
 **/
   //}
 }
-

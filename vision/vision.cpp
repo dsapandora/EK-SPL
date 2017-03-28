@@ -46,11 +46,11 @@ void Vision::onBallDetected(){
   fState =  fMemoryProxy.getData("redBallDetected");
 
   AL::ALValue value;
-  
+
 
   // Variable que dice a donde mover la cabeza para centrar la pelota.
   std::vector<float> nextHeadValues(2, 0);
-  nextHeadValues[0] = -(fVideoDeviceProxy.getImageInfoFromAngularInfo(1, fState[1])[0] - 0.5) + headValues[0]; 
+  nextHeadValues[0] = -(fVideoDeviceProxy.getImageInfoFromAngularInfo(1, fState[1])[0] - 0.5) + headValues[0];
   nextHeadValues[1] = (fVideoDeviceProxy.getImageInfoFromAngularInfo(1, fState[1])[1] - 0.5) + headValues[1];
 
   // Variable que calcula la distancia a la pelota, asumiendo que está en el suelo.
