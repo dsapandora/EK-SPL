@@ -6,16 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/roboticaspl/SPL/EK/vision/main.cpp
-vision.h
-/home/roboticaspl/SPL/EK/vision/vision.h
-boost/shared_ptr.hpp
--
-alcommon/albroker.h
--
-alcommon/albrokermanager.h
--
-
 /home/roboticaspl/SPL/EK/vision/vision.cpp
 vision.h
 /home/roboticaspl/SPL/EK/vision/vision.h
@@ -80,12 +70,6 @@ boost/smart_ptr/enable_shared_from_this.hpp
 boost/noncopyable.hpp
 -
 qi/macro.hpp
--
-
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/alcommon/albrokermanager.h
-vector
--
-boost/shared_ptr.hpp
 -
 
 /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/alcommon/alfunctor.h

@@ -33,16 +33,16 @@ private:
   AL::ALFrameManagerProxy fFrameManagerProxy;
   boost::shared_ptr<AL::ALMutex> fCallbackMutex;
   AL::ALValue fState;
-  float oldPos[2] = {0,10};
+  float oldPos[2];
   //Nao's position relative to origin in cm
-  float naoPos[2] = {0,10};
-  float thetaTrans = 0;
+  float naoPos[2];
+  float thetaTrans;
 
   void leftBumperPressed();
   void ballDetected();
   void centerBall();
   void positionInBox();
-  void shoot();
+  //void shoot();
   void caidaizq();
   void caidader();
 

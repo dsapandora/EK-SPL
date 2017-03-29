@@ -42,16 +42,6 @@ alcommon/almodule.h
 althread/almutex.h
 -
 
-/home/roboticaspl/SPL/EK/goalkeeper/main.cpp
-goalkeeper.h
-/home/roboticaspl/SPL/EK/goalkeeper/goalkeeper.h
-boost/shared_ptr.hpp
--
-alcommon/albroker.h
--
-alcommon/albrokermanager.h
--
-
 /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/_G_config.h
 bits/types.h
 -
@@ -78,12 +68,6 @@ boost/smart_ptr/enable_shared_from_this.hpp
 boost/noncopyable.hpp
 -
 qi/macro.hpp
--
-
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/alcommon/albrokermanager.h
-vector
--
-boost/shared_ptr.hpp
 -
 
 /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/alcommon/alfunctor.h

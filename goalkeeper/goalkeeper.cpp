@@ -54,6 +54,12 @@ void Goalkeeper::init()
     fMotionProxy.setStiffnesses("Head", 0.7);
     fMotionProxy.setStiffnesses("Body", 0.7);
     fPostureProxy.goToPosture("StandInit", 0.5f);
+
+    naoPos[0] = 0;
+    naoPos[1] = 10;
+    oldPos[0] = 0;
+    oldPos[1] = 10;
+    thetaTrans = 0;
   }
   catch (const AL::ALError& e) {
     qiLogError("goalkeeper.init") << e.what() << std::endl;
@@ -85,6 +91,7 @@ void Goalkeeper::positionInBox()
   //float origin [2] = { 0,0 };
   //std::vector<float> origin(2,0);
 
+  //Angulo del origen al eje de referencia del Nao
   float thetaTrans = 0;
 
   //Gets ball information relative to the robot.
@@ -92,19 +99,22 @@ void Goalkeeper::positionInBox()
   //Transformation of coordinates so that the position of the ball is relative to origin.
   //thetaTrans=nextHeadValues[0]?
   float ball[2];
-  ball[0] = cos(thetaTrans)*(float)fState[2][0] - sen(thetaTrans)*(float)fState[2][1] + oldX;
-  ball[1] = sen(thetaTrans)*(float)fState[2][0] + cos(thetaTrans)*(float)fState[2][1] + oldY;
+  ball[0] = cos(thetaTrans)*(float)fState[2][0] - sin(thetaTrans)*(float)fState[2][1] + oldPos[0];
+  ball[1] = sin(thetaTrans)*(float)fState[2][0] + cos(thetaTrans)*(float)fState[2][1] + oldPos[1];
 
   //Using a straight line to position the robot between the ball and the net.
   //Slope
-  m = ballY/ballX;
-  //Aquí hay que diseñar el algoritmo para determinar Y dependiendo de la distancia entre la pelota y la portería.
+  float m = ball[1]/ball[0];
+  //Aqui hay que disenar el algoritmo para determinar Y dependiendo de la distancia entre la pelota y la porteria.
+  //Falta tambien calcular theta con respecto al origen.
+  //Al agregar theta habria que calcular a que x,y se debe mover el robot con respecto al origen.
   float newPos[2];
-  newPos[0] = oldY;
-  newPos[1] = oldY/m;
+  newPos[1] = oldPos[1];
+  newPos[0] = oldPos[1]/m;
 
-  naoPos[0] = oldX;
-  naoPos[1] = oldY;
+  //Al agregar theta habria que calcular a que x,y se movio el robot con respecto al origen.
+  naoPos[0] = oldPos[0];
+  naoPos[1] = oldPos[1];
 
   float mov[2];
   mov[0] = newPos[0] - naoPos[0];
@@ -114,41 +124,38 @@ void Goalkeeper::positionInBox()
   uMov[0] = mov[0]/norma;
   uMov[1] = mov[1]/norma;
 
-  //
-  if(abs(newPos[0])<75){
+  if(abs(naoPos[0])<75){
 
-    fMotionProxy.setWalkTargetVelocity(uMov[0],uMov[1],(float)fState[3][2],0.1);
+    fMotionProxy.setWalkTargetVelocity(uMov[0],uMov[1],0,0.1);
 
-  } else {
+  }/* else { 
 
     if(newPos[0]>75 && naoPos[0]<75){
 
-      fMotionProxy.setWalkTargetVelocity(75,naoPos[1],(float)fState[3][2],0.1);
+      fMotionProxy.setWalkTargetVelocity(75,naoPos[1],0,0.1);
 
     } else {
 
-      fMotionProxy.setWalkTargetVelocity(-75,naoPos[1],(float)fState[3][2],0.1);
+      fMotionProxy.setWalkTargetVelocity(-75,naoPos[1],0,0.1);
 
     }
 
-  }
+  }*/
 
-  naoPos[0] = oldX + newX;
-  naoPos[1] = oldY + newY;
+  naoPos[0] = oldPos[0] + newPos[0];
+  naoPos[1] = oldPos[1] + newPos[1];
 
-  oldX = newX;
-  oldY = newY;
-
-  )
+  oldPos[0] = newPos[0];
+  oldPos[1] = newPos[1];
 
 }
 
-void Goalkeeper::shoot()
+/*void Goalkeeper::shoot()
 {
   std::string behaviorID;
   behaviorID = fFrameManagerProxy.newBehaviorFromFile("/home/nao/kick.xar", "");
   fFrameManagerProxy.completeBehavior(behaviorID);
-}
+}*/
 
 void Goalkeeper::ballDetected()
 {
