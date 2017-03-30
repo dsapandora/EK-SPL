@@ -35,6 +35,8 @@ alproxies/alframemanagerproxy.h
 -
 alproxies/alrobotpostureproxy.h
 -
+alproxies/dcmproxy.h
+-
 iostream
 -
 alcommon/almodule.h
@@ -262,6 +264,22 @@ vector
 
 /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/alproxies/api.h
 qi/macro.hpp
+-
+
+/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/alproxies/dcmproxy.h
+alproxies/dcmproxyposthandler.h
+-
+alproxies/api.h
+-
+
+/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/alproxies/dcmproxyposthandler.h
+boost/shared_ptr.hpp
+-
+alvalue/alvalue.h
+-
+string
+-
+vector
 -
 
 /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/althread/alcriticalsection.h

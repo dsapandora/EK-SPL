@@ -10,9 +10,9 @@
 #include <qi/log.hpp>
 
 Goalkeeper::Goalkeeper(boost::shared_ptr<AL::ALBroker> broker,
-                   const std::string& name)
-  : AL::ALModule(broker, name),
-  fCallbackMutex(AL::ALMutex::createALMutex())
+ const std::string& name)
+: AL::ALModule(broker, name),
+fCallbackMutex(AL::ALMutex::createALMutex())
 {
   setModuleDescription("FollowBall module");
 
@@ -46,6 +46,7 @@ Goalkeeper::~Goalkeeper()
 void Goalkeeper::init()
 {
   try {
+
     fMemoryProxy = AL::ALMemoryProxy(getParentBroker());
     fMotionProxy = AL::ALMotionProxy(getParentBroker());
     fFrameManagerProxy = AL::ALFrameManagerProxy(getParentBroker());
@@ -54,12 +55,17 @@ void Goalkeeper::init()
     fMotionProxy.setStiffnesses("Head", 0.7);
     fMotionProxy.setStiffnesses("Body", 0.7);
     fPostureProxy.goToPosture("StandInit", 0.5f);
-
+    dcm = new AL::DCMProxy(getParentBroker());  
+    ta = 0;
+    ti = dcm->getTime(0);
+    offset = 10;
     naoPos[0] = 0;
-    naoPos[1] = 10;
-    oldPos[0] = 0;
-    oldPos[1] = 10;
+    naoPos[1] = 0;
+    naoPos[2] = 0; 
+    uMov[0] = 0;
+    uMov[1] = 0;
     thetaTrans = 0;
+    flag = false;
   }
   catch (const AL::ALError& e) {
     qiLogError("goalkeeper.init") << e.what() << std::endl;
@@ -71,15 +77,16 @@ void Goalkeeper::leftBumperPressed()
   fMotionProxy.setStiffnesses("Head", 0.7);
   fMotionProxy.setStiffnesses("Body", 0.7);
   fPostureProxy.goToPosture("StandInit", 0.5f);
-  fMemoryProxy.subscribeToMicroEvent("EKBallDetected", "Goalkeeper", "EKBallDetected", "ballDetected");
+  //fMemoryProxy.subscribeToMicroEvent("EKBallDetected", "Goalkeeper", "EKBallDetected", "ballDetected");
+  fMemoryProxy.subscribeToMicroEvent("EKBallDetected", "Goalkeeper", "EKBallDetected", "positionInBox");
 }
 
 void Goalkeeper::centerBall()
 {
-    if(fState.getSize() > 0)
-    {
-      fMotionProxy.setAngles("Head", fState[1], 0.4);
-    }
+  if(fState.getSize() > 0)
+  {
+    fMotionProxy.setAngles("Head", fState[1], 0.4);
+  }
 }
 
 //Method that determines the position the goalkeeper has to be in based on the position of the ball
@@ -92,41 +99,52 @@ void Goalkeeper::positionInBox()
   //std::vector<float> origin(2,0);
 
   //Angulo del origen al eje de referencia del Nao
-  float thetaTrans = 0;
+  thetaTrans = 0; //Hay que volverlo variable
 
   //Gets ball information relative to the robot.
   fState =  fMemoryProxy.getData("EKBallDetected");
+  fMotionProxy.setAngles("Head", fState[1], 0.4);
+
   //Transformation of coordinates so that the position of the ball is relative to origin.
   //thetaTrans=nextHeadValues[0]?
-  float ball[2];
-  ball[0] = cos(thetaTrans)*(float)fState[2][0] - sin(thetaTrans)*(float)fState[2][1] + oldPos[0];
-  ball[1] = sin(thetaTrans)*(float)fState[2][0] + cos(thetaTrans)*(float)fState[2][1] + oldPos[1];
+
+  ball[0] = cos(thetaTrans)*(float)fState[2][0] - sin(thetaTrans)*(float)fState[2][1] + naoPos[0];
+  ball[1] = sin(thetaTrans)*(float)fState[2][0] + cos(thetaTrans)*(float)fState[2][1] + naoPos[1];
 
   //Using a straight line to position the robot between the ball and the net.
   //Slope
-  float m = ball[1]/ball[0];
+  float m = (ball[1]-offset)/ball[0];
   //Aqui hay que disenar el algoritmo para determinar Y dependiendo de la distancia entre la pelota y la porteria.
   //Falta tambien calcular theta con respecto al origen.
   //Al agregar theta habria que calcular a que x,y se debe mover el robot con respecto al origen.
-  float newPos[2];
-  newPos[1] = oldPos[1];
-  newPos[0] = oldPos[1]/m;
+
+  newPos[1] = naoPos[1];
+  newPos[0] = (naoPos[1]+offset)/m; 
+  newPos[2] = atan((naoPos[1]+offset)/naoPos[0]);
 
   //Al agregar theta habria que calcular a que x,y se movio el robot con respecto al origen.
-  naoPos[0] = oldPos[0];
-  naoPos[1] = oldPos[1];
+//  naoPos[0] = oldPos[0];
+//  naoPos[1] = oldPos[1];
 
-  float mov[2];
+  
   mov[0] = newPos[0] - naoPos[0];
   mov[1] = newPos[1] - naoPos[1];
-  float norma = sqrt(mov[0] * mov[0] + mov[1] * mov[1]);
-  float uMov[2];
-  uMov[0] = mov[0]/norma;
-  uMov[1] = mov[1]/norma;
+  
+  movR[0] = ((mov[0]+sin(thetaTrans)*(mov[1]-naoPos[1])/cos(thetaTrans)-naoPos[1])/cos(thetaTrans))/(1+tan(thetaTrans)*tan(thetaTrans));//si no jalan, usar la transformacion de ball[0] y ball[1] pero con los valores negativos
+  movR[1] = ((mov[1]-sin(thetaTrans)*(mov[0]-naoPos[0])/cos(thetaTrans)-naoPos[1])/cos(thetaTrans))/(1+tan(thetaTrans)*tan(thetaTrans));//si no jalan, usar la transformacion de ball[0] y ball[1] pero con los valores negativos
+  movR[2] = newPos[2] - naoPos[2]; 
 
-  if(abs(naoPos[0])<75){
+  float norma = sqrt(movR[0] * movR[0] + movR[1] * movR[1]);
+  
+  uMov[0] = movR[0]/norma;
+  uMov[1] = movR[1]/norma;
+  uMov[2] = movR[2]/2.09;
 
-    fMotionProxy.setWalkTargetVelocity(uMov[0],uMov[1],0,0.1);
+
+  if(abs(movR[0])<75){
+    ti=ti+ta;
+    ta = dcm->getTime(ti);
+    fMotionProxy.setWalkTargetVelocity(uMov[0],uMov[1],uMov[2],0.1); 
 
   }/* else { 
 
@@ -142,13 +160,16 @@ void Goalkeeper::positionInBox()
 
   }*/
 
-  naoPos[0] = oldPos[0] + newPos[0];
-  naoPos[1] = oldPos[1] + newPos[1];
+    if(!flag){
+      flag = true;
+    }else{
+      naoPos[0] = naoPos[0] + uMov[0]*ta;//uMov * TIEMPO (como chingaos lo calculamos no se)
+      naoPos[1] = naoPos[1] + uMov[1]*ta;//uMov * TIEMPO (como chingaos lo calculamos no se) 
+    }
+//  oldPos[0] = naoPos[0];
+//  oldPos[1] = naoPos[1];
 
-  oldPos[0] = newPos[0];
-  oldPos[1] = newPos[1];
-
-}
+  }
 
 /*void Goalkeeper::shoot()
 {
@@ -157,27 +178,27 @@ void Goalkeeper::positionInBox()
   fFrameManagerProxy.completeBehavior(behaviorID);
 }*/
 
-void Goalkeeper::ballDetected()
-{
-  AL::ALCriticalSection section(fCallbackMutex);
-  fState =  fMemoryProxy.getData("EKBallDetected");
+  void Goalkeeper::ballDetected()
+  {
+    AL::ALCriticalSection section(fCallbackMutex);
+    fState =  fMemoryProxy.getData("EKBallDetected");
 
 
-  fMotionProxy.setAngles("Head", fState[1], 0.4);
+    fMotionProxy.setAngles("Head", fState[1], 0.4);
   //fMotionProxy.setWalkTargetVelocity(0, fState[2][2], 0, 0.1);
 
-  if((float)fState[0] < 65)
-  {
-    std::cout << "Theta: " << (float)fState[2][2] << std::endl;
-    if ((float)fState[2][2] > 0.35)
+    if((float)fState[0] < 65)
     {
-      caidader();
+      std::cout << "Theta: " << (float)fState[2][2] << std::endl;
+      if ((float)fState[2][2] > 0.35)
+      {
+        caidader();
+      }
+      else if((float)fState[2][2] < -0.35)
+      {
+        caidaizq();
+      }
     }
-    else if((float)fState[2][2] < -0.35)
-    {
-      caidaizq();
-    }
-  }
 /**
   if((float)fState[0] > 17)
   {
@@ -230,4 +251,4 @@ void Goalkeeper::ballDetected()
         }
 **/
   //}
-}
+      }

@@ -30,6 +30,8 @@ CMakeFiles/goalkeeper.dir/goalkeeper.cpp.o: /home/roboticaspl/SPL/linux64-nao-at
 CMakeFiles/goalkeeper.dir/goalkeeper.cpp.o: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/alproxies/alrobotpostureproxy.h
 CMakeFiles/goalkeeper.dir/goalkeeper.cpp.o: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/alproxies/alrobotpostureproxyposthandler.h
 CMakeFiles/goalkeeper.dir/goalkeeper.cpp.o: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/alproxies/api.h
+CMakeFiles/goalkeeper.dir/goalkeeper.cpp.o: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/alproxies/dcmproxy.h
+CMakeFiles/goalkeeper.dir/goalkeeper.cpp.o: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/alproxies/dcmproxyposthandler.h
 CMakeFiles/goalkeeper.dir/goalkeeper.cpp.o: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/althread/alcriticalsection.h
 CMakeFiles/goalkeeper.dir/goalkeeper.cpp.o: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/althread/almutex.h
 CMakeFiles/goalkeeper.dir/goalkeeper.cpp.o: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/althread/config.h
@@ -784,6 +786,8 @@ CMakeFiles/goalkeeper.dir/main.cpp.o: /home/roboticaspl/SPL/linux64-nao-atom-cro
 CMakeFiles/goalkeeper.dir/main.cpp.o: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/alproxies/alrobotpostureproxy.h
 CMakeFiles/goalkeeper.dir/main.cpp.o: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/alproxies/alrobotpostureproxyposthandler.h
 CMakeFiles/goalkeeper.dir/main.cpp.o: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/alproxies/api.h
+CMakeFiles/goalkeeper.dir/main.cpp.o: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/alproxies/dcmproxy.h
+CMakeFiles/goalkeeper.dir/main.cpp.o: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/alproxies/dcmproxyposthandler.h
 CMakeFiles/goalkeeper.dir/main.cpp.o: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/althread/almutex.h
 CMakeFiles/goalkeeper.dir/main.cpp.o: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/althread/config.h
 CMakeFiles/goalkeeper.dir/main.cpp.o: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/alvalue/alvalue.h

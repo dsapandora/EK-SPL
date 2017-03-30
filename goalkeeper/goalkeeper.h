@@ -7,6 +7,7 @@
 # include <alproxies/almotionproxy.h>
 # include <alproxies/alframemanagerproxy.h>
 # include <alproxies/alrobotpostureproxy.h>
+# include <alproxies/dcmproxy.h>
 
 # include <iostream>
 # include <alcommon/almodule.h>
@@ -31,12 +32,23 @@ private:
   AL::ALRobotPostureProxy fPostureProxy;
   AL::ALMotionProxy fMotionProxy;
   AL::ALFrameManagerProxy fFrameManagerProxy;
+  AL::DCMProxy* dcm;
   boost::shared_ptr<AL::ALMutex> fCallbackMutex;
   AL::ALValue fState;
-  float oldPos[2];
   //Nao's position relative to origin in cm
-  float naoPos[2];
+  float naoPos[3];
+  float newPos[3];
   float thetaTrans;
+  float ball[2];
+  float mov[2];
+  float movR[3];
+  float uMov[3];
+
+  int ta;
+  int ti;
+  int offset;
+
+  bool flag;
 
   void leftBumperPressed();
   void ballDetected();
