@@ -1,5 +1,5 @@
 #ifndef VISION_H
-# define VISION_H
+#define VISION_H
 
 # include <iostream>
 # include <alcommon/almodule.h>
@@ -7,6 +7,8 @@
 #include <boost/shared_ptr.hpp>
 #include <string>
 
+
+////////PFUDOR
 #include <alproxies/almemoryproxy.h>
 #include <alproxies/altexttospeechproxy.h>
 #include <alproxies/almotionproxy.h>

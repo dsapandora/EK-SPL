@@ -4,8 +4,8 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/roboticaspl/SPL/EK/shooter/main.cpp" "/home/roboticaspl/SPL/EK/shooter/build-cross-atom/CMakeFiles/shooter.dir/main.cpp.o"
-  "/home/roboticaspl/SPL/EK/shooter/shooter.cpp" "/home/roboticaspl/SPL/EK/shooter/build-cross-atom/CMakeFiles/shooter.dir/shooter.cpp.o"
+  "/home/ruiciro/SPL/EK-SPL/shooter/main.cpp" "/home/ruiciro/SPL/EK-SPL/shooter/build-cross-atom/CMakeFiles/shooter.dir/main.cpp.o"
+  "/home/ruiciro/SPL/EK-SPL/shooter/shooter.cpp" "/home/ruiciro/SPL/EK-SPL/shooter/build-cross-atom/CMakeFiles/shooter.dir/shooter.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -15,10 +15,10 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
 
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
-  "/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include"
-  "/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/alsoap"
-  "/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/boost-1_48"
-  "/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/soap"
+  "/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include"
+  "/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/alsoap"
+  "/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/boost-1_48"
+  "/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/soap"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

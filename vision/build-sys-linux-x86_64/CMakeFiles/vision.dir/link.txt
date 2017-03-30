@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -g   -shared -Wl,-soname,libvision.so -o sdk/lib/naoqi/libvision.so CMakeFiles/vision.dir/BallDetection.cpp.o -lopencv_highgui -lopencv_imgproc -lopencv_core 

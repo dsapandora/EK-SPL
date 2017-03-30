@@ -1,1 +1,1 @@
-/home/roboticaspl/SPL/EK/shooter/build-cross-atom/CMakeFiles/shooter.dir
+/home/ruiciro/SPL/EK-SPL/shooter/build-cross-atom/CMakeFiles/shooter.dir

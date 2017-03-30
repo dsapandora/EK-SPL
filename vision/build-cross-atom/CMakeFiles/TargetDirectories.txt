@@ -1,1 +1,1 @@
-/home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/vision.dir
+/home/ruiciro/SPL/EK-SPL/vision/build-cross-atom/CMakeFiles/vision.dir

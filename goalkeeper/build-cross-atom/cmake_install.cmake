@@ -1,4 +1,4 @@
-# Install script for directory: /home/roboticaspl/SPL/EK/goalkeeper
+# Install script for directory: /home/ruiciro/SPL/EK-SPL/goalkeeper
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,11 +33,11 @@ IF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "lib")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/naoqi" TYPE SHARED_LIBRARY FILES "/home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeRelink.dir/libgoalkeeper.so")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/naoqi" TYPE SHARED_LIBRARY FILES "/home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeRelink.dir/libgoalkeeper.so")
   IF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/naoqi/libgoalkeeper.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/naoqi/libgoalkeeper.so")
     IF(CMAKE_INSTALL_DO_STRIP)
-      EXECUTE_PROCESS(COMMAND "/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/naoqi/libgoalkeeper.so")
+      EXECUTE_PROCESS(COMMAND "/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/naoqi/libgoalkeeper.so")
     ENDIF(CMAKE_INSTALL_DO_STRIP)
   ENDIF()
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "lib")
@@ -48,7 +48,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/roboticaspl/SPL/EK/goalkeeper
+CMAKE_SOURCE_DIR = /home/ruiciro/SPL/EK-SPL/goalkeeper
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom
+CMAKE_BINARY_DIR = /home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom
 
 # Include any dependencies generated for this target.
 include CMakeFiles/goalkeeper.dir/depend.make
@@ -51,17 +51,17 @@ include CMakeFiles/goalkeeper.dir/flags.make
 
 CMakeFiles/goalkeeper.dir/goalkeeper.cpp.o: CMakeFiles/goalkeeper.dir/flags.make
 CMakeFiles/goalkeeper.dir/goalkeeper.cpp.o: ../goalkeeper.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/goalkeeper.dir/goalkeeper.cpp.o"
-	/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/goalkeeper.dir/goalkeeper.cpp.o -c /home/roboticaspl/SPL/EK/goalkeeper/goalkeeper.cpp
+	/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/goalkeeper.dir/goalkeeper.cpp.o -c /home/ruiciro/SPL/EK-SPL/goalkeeper/goalkeeper.cpp
 
 CMakeFiles/goalkeeper.dir/goalkeeper.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/goalkeeper.dir/goalkeeper.cpp.i"
-	/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/roboticaspl/SPL/EK/goalkeeper/goalkeeper.cpp > CMakeFiles/goalkeeper.dir/goalkeeper.cpp.i
+	/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ruiciro/SPL/EK-SPL/goalkeeper/goalkeeper.cpp > CMakeFiles/goalkeeper.dir/goalkeeper.cpp.i
 
 CMakeFiles/goalkeeper.dir/goalkeeper.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/goalkeeper.dir/goalkeeper.cpp.s"
-	/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/roboticaspl/SPL/EK/goalkeeper/goalkeeper.cpp -o CMakeFiles/goalkeeper.dir/goalkeeper.cpp.s
+	/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ruiciro/SPL/EK-SPL/goalkeeper/goalkeeper.cpp -o CMakeFiles/goalkeeper.dir/goalkeeper.cpp.s
 
 CMakeFiles/goalkeeper.dir/goalkeeper.cpp.o.requires:
 .PHONY : CMakeFiles/goalkeeper.dir/goalkeeper.cpp.o.requires
@@ -74,17 +74,17 @@ CMakeFiles/goalkeeper.dir/goalkeeper.cpp.o.provides.build: CMakeFiles/goalkeeper
 
 CMakeFiles/goalkeeper.dir/main.cpp.o: CMakeFiles/goalkeeper.dir/flags.make
 CMakeFiles/goalkeeper.dir/main.cpp.o: ../main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/goalkeeper.dir/main.cpp.o"
-	/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/goalkeeper.dir/main.cpp.o -c /home/roboticaspl/SPL/EK/goalkeeper/main.cpp
+	/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/goalkeeper.dir/main.cpp.o -c /home/ruiciro/SPL/EK-SPL/goalkeeper/main.cpp
 
 CMakeFiles/goalkeeper.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/goalkeeper.dir/main.cpp.i"
-	/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/roboticaspl/SPL/EK/goalkeeper/main.cpp > CMakeFiles/goalkeeper.dir/main.cpp.i
+	/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ruiciro/SPL/EK-SPL/goalkeeper/main.cpp > CMakeFiles/goalkeeper.dir/main.cpp.i
 
 CMakeFiles/goalkeeper.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/goalkeeper.dir/main.cpp.s"
-	/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/roboticaspl/SPL/EK/goalkeeper/main.cpp -o CMakeFiles/goalkeeper.dir/main.cpp.s
+	/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ruiciro/SPL/EK-SPL/goalkeeper/main.cpp -o CMakeFiles/goalkeeper.dir/main.cpp.s
 
 CMakeFiles/goalkeeper.dir/main.cpp.o.requires:
 .PHONY : CMakeFiles/goalkeeper.dir/main.cpp.o.requires
@@ -106,22 +106,22 @@ goalkeeper_EXTERNAL_OBJECTS =
 sdk/lib/naoqi/libgoalkeeper.so: CMakeFiles/goalkeeper.dir/goalkeeper.cpp.o
 sdk/lib/naoqi/libgoalkeeper.so: CMakeFiles/goalkeeper.dir/main.cpp.o
 sdk/lib/naoqi/libgoalkeeper.so: CMakeFiles/goalkeeper.dir/build.make
-sdk/lib/naoqi/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalproxies.so
-sdk/lib/naoqi/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalsoap.so
-sdk/lib/naoqi/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/librttools.so
-sdk/lib/naoqi/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalthread.so
-sdk/lib/naoqi/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_signals-mt.so
-sdk/lib/naoqi/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_program_options-mt.so
-sdk/lib/naoqi/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalvalue.so
-sdk/lib/naoqi/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libtinyxml.so
-sdk/lib/naoqi/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/librt.so
-sdk/lib/naoqi/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libqi.so
-sdk/lib/naoqi/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalerror.so
-sdk/lib/naoqi/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_filesystem-mt.so
-sdk/lib/naoqi/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_thread-mt.so
-sdk/lib/naoqi/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libpthread.so
-sdk/lib/naoqi/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_system-mt.so
-sdk/lib/naoqi/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libdl.so
+sdk/lib/naoqi/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalproxies.so
+sdk/lib/naoqi/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalsoap.so
+sdk/lib/naoqi/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/librttools.so
+sdk/lib/naoqi/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalthread.so
+sdk/lib/naoqi/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_signals-mt.so
+sdk/lib/naoqi/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_program_options-mt.so
+sdk/lib/naoqi/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalvalue.so
+sdk/lib/naoqi/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libtinyxml.so
+sdk/lib/naoqi/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/librt.so
+sdk/lib/naoqi/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libqi.so
+sdk/lib/naoqi/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalerror.so
+sdk/lib/naoqi/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_filesystem-mt.so
+sdk/lib/naoqi/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_thread-mt.so
+sdk/lib/naoqi/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libpthread.so
+sdk/lib/naoqi/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_system-mt.so
+sdk/lib/naoqi/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libdl.so
 sdk/lib/naoqi/libgoalkeeper.so: CMakeFiles/goalkeeper.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library sdk/lib/naoqi/libgoalkeeper.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/goalkeeper.dir/link.txt --verbose=$(VERBOSE)
@@ -141,22 +141,22 @@ goalkeeper_EXTERNAL_OBJECTS =
 CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: CMakeFiles/goalkeeper.dir/goalkeeper.cpp.o
 CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: CMakeFiles/goalkeeper.dir/main.cpp.o
 CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: CMakeFiles/goalkeeper.dir/build.make
-CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalproxies.so
-CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalsoap.so
-CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/librttools.so
-CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalthread.so
-CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_signals-mt.so
-CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_program_options-mt.so
-CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalvalue.so
-CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libtinyxml.so
-CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/librt.so
-CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libqi.so
-CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalerror.so
-CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_filesystem-mt.so
-CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_thread-mt.so
-CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libpthread.so
-CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_system-mt.so
-CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libdl.so
+CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalproxies.so
+CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalsoap.so
+CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/librttools.so
+CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalthread.so
+CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_signals-mt.so
+CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_program_options-mt.so
+CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalvalue.so
+CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libtinyxml.so
+CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/librt.so
+CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libqi.so
+CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalerror.so
+CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_filesystem-mt.so
+CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_thread-mt.so
+CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libpthread.so
+CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_system-mt.so
+CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libdl.so
 CMakeFiles/CMakeRelink.dir/libgoalkeeper.so: CMakeFiles/goalkeeper.dir/relink.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library CMakeFiles/CMakeRelink.dir/libgoalkeeper.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/goalkeeper.dir/relink.txt --verbose=$(VERBOSE)
@@ -174,6 +174,6 @@ CMakeFiles/goalkeeper.dir/clean:
 .PHONY : CMakeFiles/goalkeeper.dir/clean
 
 CMakeFiles/goalkeeper.dir/depend:
-	cd /home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/roboticaspl/SPL/EK/goalkeeper /home/roboticaspl/SPL/EK/goalkeeper /home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom /home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom /home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/goalkeeper.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ruiciro/SPL/EK-SPL/goalkeeper /home/ruiciro/SPL/EK-SPL/goalkeeper /home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom /home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom /home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/goalkeeper.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/goalkeeper.dir/depend
 

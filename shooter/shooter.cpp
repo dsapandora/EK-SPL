@@ -9,10 +9,12 @@
 
 #include <qi/log.hpp>
 
+
 Shooter::Shooter(boost::shared_ptr<AL::ALBroker> broker,
                    const std::string& name)
   : AL::ALModule(broker, name),
   fCallbackMutex(AL::ALMutex::createALMutex())
+
 {
   setModuleDescription("FollowBall module");
 
@@ -61,6 +63,8 @@ void Shooter::centerBall()
 
 void Shooter::walkToBall()
 {
+
+
   //fMotionProxy.setWalkTargetVelocity((float)fState[3][0],(float)fState[3][1],(float)fState[3][2],0.8);
   //fMotionProxy.moveTo((float)fState[2][0]*0.01-0.15, (float)fState[2][1]*0.01+0.05, (float)fState[2][2]);
 }
@@ -104,4 +108,3 @@ void Shooter::ballDetected()
         }
     }
 }
-

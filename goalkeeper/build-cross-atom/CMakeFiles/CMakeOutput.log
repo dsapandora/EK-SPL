@@ -1,92 +1,32 @@
 The target system is: Linux -  - i486
-The host system is: Linux - 3.13.0-24-generic - x86_64
+The host system is: Linux - 4.4.0-31-generic - x86_64
 Determining if files pthread.h exist passed with the following output:
-Change Dir: /home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp
+Change Dir: /home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec3515504277/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3515504277.dir/build.make CMakeFiles/cmTryCompileExec3515504277.dir/build
-make[1]: se ingresa al directorio «/home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp»
-/usr/bin/cmake -E cmake_progress_report /home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec3515504277.dir/CheckIncludeFiles.c.o
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD    -o CMakeFiles/cmTryCompileExec3515504277.dir/CheckIncludeFiles.c.o   -c /home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
-Linking C executable cmTryCompileExec3515504277
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3515504277.dir/link.txt --verbose=1
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD   -Wl,--sysroot,/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ CMakeFiles/cmTryCompileExec3515504277.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec3515504277 -rdynamic 
-make[1]: se sale del directorio «/home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp»
+Run Build Command:/usr/bin/make "cmTryCompileExec1339493066/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1339493066.dir/build.make CMakeFiles/cmTryCompileExec1339493066.dir/build
+make[1]: Entering directory `/home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1339493066.dir/CheckIncludeFiles.c.o
+/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD    -o CMakeFiles/cmTryCompileExec1339493066.dir/CheckIncludeFiles.c.o   -c /home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec1339493066
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1339493066.dir/link.txt --verbose=1
+/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD   -Wl,--sysroot,/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ CMakeFiles/cmTryCompileExec1339493066.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec1339493066 -rdynamic 
+make[1]: Leaving directory `/home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp'
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
-Change Dir: /home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp
+Change Dir: /home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1417179498/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1417179498.dir/build.make CMakeFiles/cmTryCompileExec1417179498.dir/build
-make[1]: se ingresa al directorio «/home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp»
-/usr/bin/cmake -E cmake_progress_report /home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1417179498.dir/CheckFunctionExists.c.o
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec1417179498.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec1417179498
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1417179498.dir/link.txt --verbose=1
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--sysroot,/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ CMakeFiles/cmTryCompileExec1417179498.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1417179498 -rdynamic -lpthread 
-make[1]: se sale del directorio «/home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp»
-
-
-Determining if files pthread.h exist passed with the following output:
-Change Dir: /home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp
-
-Run Build Command:/usr/bin/make "cmTryCompileExec1227787796/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1227787796.dir/build.make CMakeFiles/cmTryCompileExec1227787796.dir/build
-make[1]: se ingresa al directorio «/home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp»
-/usr/bin/cmake -E cmake_progress_report /home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1227787796.dir/CheckIncludeFiles.c.o
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD    -o CMakeFiles/cmTryCompileExec1227787796.dir/CheckIncludeFiles.c.o   -c /home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
-Linking C executable cmTryCompileExec1227787796
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1227787796.dir/link.txt --verbose=1
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD   -Wl,--sysroot,/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ CMakeFiles/cmTryCompileExec1227787796.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec1227787796 -rdynamic 
-make[1]: se sale del directorio «/home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp»
-
-
-Determining if the function pthread_create exists in the pthread passed with the following output:
-Change Dir: /home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp
-
-Run Build Command:/usr/bin/make "cmTryCompileExec44604965/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec44604965.dir/build.make CMakeFiles/cmTryCompileExec44604965.dir/build
-make[1]: se ingresa al directorio «/home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp»
-/usr/bin/cmake -E cmake_progress_report /home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec44604965.dir/CheckFunctionExists.c.o
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec44604965.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec44604965
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec44604965.dir/link.txt --verbose=1
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--sysroot,/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ CMakeFiles/cmTryCompileExec44604965.dir/CheckFunctionExists.c.o  -o cmTryCompileExec44604965 -rdynamic -lpthread 
-make[1]: se sale del directorio «/home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp»
-
-
-Determining if files pthread.h exist passed with the following output:
-Change Dir: /home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp
-
-Run Build Command:/usr/bin/make "cmTryCompileExec3426287884/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3426287884.dir/build.make CMakeFiles/cmTryCompileExec3426287884.dir/build
-make[1]: se ingresa al directorio «/home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp»
-/usr/bin/cmake -E cmake_progress_report /home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec3426287884.dir/CheckIncludeFiles.c.o
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD    -o CMakeFiles/cmTryCompileExec3426287884.dir/CheckIncludeFiles.c.o   -c /home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
-Linking C executable cmTryCompileExec3426287884
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3426287884.dir/link.txt --verbose=1
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD   -Wl,--sysroot,/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ CMakeFiles/cmTryCompileExec3426287884.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec3426287884 -rdynamic 
-make[1]: se sale del directorio «/home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp»
-
-
-Determining if the function pthread_create exists in the pthread passed with the following output:
-Change Dir: /home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp
-
-Run Build Command:/usr/bin/make "cmTryCompileExec3708786321/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3708786321.dir/build.make CMakeFiles/cmTryCompileExec3708786321.dir/build
-make[1]: se ingresa al directorio «/home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp»
-/usr/bin/cmake -E cmake_progress_report /home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec3708786321.dir/CheckFunctionExists.c.o
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec3708786321.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec3708786321
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3708786321.dir/link.txt --verbose=1
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--sysroot,/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ CMakeFiles/cmTryCompileExec3708786321.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3708786321 -rdynamic -lpthread 
-make[1]: se sale del directorio «/home/roboticaspl/SPL/EK/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp»
+Run Build Command:/usr/bin/make "cmTryCompileExec2494124952/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2494124952.dir/build.make CMakeFiles/cmTryCompileExec2494124952.dir/build
+make[1]: Entering directory `/home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2494124952.dir/CheckFunctionExists.c.o
+/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec2494124952.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2494124952
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2494124952.dir/link.txt --verbose=1
+/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--sysroot,/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ CMakeFiles/cmTryCompileExec2494124952.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2494124952 -rdynamic -lpthread 
+make[1]: Leaving directory `/home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp'
 
 

@@ -1,23 +1,23 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/CMakeTmp
+Change Dir: /home/ruiciro/SPL/EK-SPL/vision/build-cross-atom/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec121713270/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec121713270.dir/build.make CMakeFiles/cmTryCompileExec121713270.dir/build
-make[1]: se ingresa al directorio «/home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/CMakeTmp»
-/usr/bin/cmake -E cmake_progress_report /home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec121713270.dir/CheckSymbolExists.c.o
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD    -o CMakeFiles/cmTryCompileExec121713270.dir/CheckSymbolExists.c.o   -c /home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec121713270
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec121713270.dir/link.txt --verbose=1
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD   -Wl,--sysroot,/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ CMakeFiles/cmTryCompileExec121713270.dir/CheckSymbolExists.c.o  -o cmTryCompileExec121713270 -rdynamic 
-CMakeFiles/cmTryCompileExec121713270.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:/usr/bin/make "cmTryCompileExec1975195599/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1975195599.dir/build.make CMakeFiles/cmTryCompileExec1975195599.dir/build
+make[1]: Entering directory `/home/ruiciro/SPL/EK-SPL/vision/build-cross-atom/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ruiciro/SPL/EK-SPL/vision/build-cross-atom/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1975195599.dir/CheckSymbolExists.c.o
+/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD    -o CMakeFiles/cmTryCompileExec1975195599.dir/CheckSymbolExists.c.o   -c /home/ruiciro/SPL/EK-SPL/vision/build-cross-atom/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec1975195599
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1975195599.dir/link.txt --verbose=1
+/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD   -Wl,--sysroot,/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ CMakeFiles/cmTryCompileExec1975195599.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1975195599 -rdynamic 
+CMakeFiles/cmTryCompileExec1975195599.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x1): undefined reference to `pthread_create'
 collect2: ld returned 1 exit status
-make[1]: se sale del directorio «/home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/CMakeTmp»
-make[1]: *** [cmTryCompileExec121713270] Error 1
-make: *** [cmTryCompileExec121713270/fast] Error 2
+make[1]: Leaving directory `/home/ruiciro/SPL/EK-SPL/vision/build-cross-atom/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec1975195599] Error 1
+make: *** [cmTryCompileExec1975195599/fast] Error 2
 
-File /home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/ruiciro/SPL/EK-SPL/vision/build-cross-atom/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -33,74 +33,21 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/CMakeTmp
+Change Dir: /home/ruiciro/SPL/EK-SPL/vision/build-cross-atom/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec919521490/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec919521490.dir/build.make CMakeFiles/cmTryCompileExec919521490.dir/build
-make[1]: se ingresa al directorio «/home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/CMakeTmp»
-/usr/bin/cmake -E cmake_progress_report /home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec919521490.dir/CheckFunctionExists.c.o
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec919521490.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec919521490
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec919521490.dir/link.txt --verbose=1
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--sysroot,/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ CMakeFiles/cmTryCompileExec919521490.dir/CheckFunctionExists.c.o  -o cmTryCompileExec919521490 -rdynamic -lpthreads 
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/../lib/gcc/i686-aldebaran-linux-gnu/4.5.3/../../../../i686-aldebaran-linux-gnu/bin/ld: cannot find -lpthreads
+Run Build Command:/usr/bin/make "cmTryCompileExec2964343802/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2964343802.dir/build.make CMakeFiles/cmTryCompileExec2964343802.dir/build
+make[1]: Entering directory `/home/ruiciro/SPL/EK-SPL/vision/build-cross-atom/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ruiciro/SPL/EK-SPL/vision/build-cross-atom/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2964343802.dir/CheckFunctionExists.c.o
+/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec2964343802.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2964343802
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2964343802.dir/link.txt --verbose=1
+/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--sysroot,/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ CMakeFiles/cmTryCompileExec2964343802.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2964343802 -rdynamic -lpthreads 
+/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/../lib/gcc/i686-aldebaran-linux-gnu/4.5.3/../../../../i686-aldebaran-linux-gnu/bin/ld: cannot find -lpthreads
 collect2: ld returned 1 exit status
-make[1]: se sale del directorio «/home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/CMakeTmp»
-make[1]: *** [cmTryCompileExec919521490] Error 1
-make: *** [cmTryCompileExec919521490/fast] Error 2
-
-
-Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/CMakeTmp
-
-Run Build Command:/usr/bin/make "cmTryCompileExec534589495/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec534589495.dir/build.make CMakeFiles/cmTryCompileExec534589495.dir/build
-make[1]: se ingresa al directorio «/home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/CMakeTmp»
-/usr/bin/cmake -E cmake_progress_report /home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec534589495.dir/CheckSymbolExists.c.o
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD    -o CMakeFiles/cmTryCompileExec534589495.dir/CheckSymbolExists.c.o   -c /home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec534589495
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec534589495.dir/link.txt --verbose=1
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD   -Wl,--sysroot,/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ CMakeFiles/cmTryCompileExec534589495.dir/CheckSymbolExists.c.o  -o cmTryCompileExec534589495 -rdynamic 
-CMakeFiles/cmTryCompileExec534589495.dir/CheckSymbolExists.c.o: In function `main':
-CheckSymbolExists.c:(.text+0x1): undefined reference to `pthread_create'
-collect2: ld returned 1 exit status
-make[1]: se sale del directorio «/home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/CMakeTmp»
-make[1]: *** [cmTryCompileExec534589495] Error 1
-make: *** [cmTryCompileExec534589495/fast] Error 2
-
-File /home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
-/* */
-#include <pthread.h>
-
-int main(int argc, char** argv)
-{
-  (void)argv;
-#ifndef pthread_create
-  return ((int*)(&pthread_create))[argc];
-#else
-  (void)argc;
-  return 0;
-#endif
-}
-
-Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/CMakeTmp
-
-Run Build Command:/usr/bin/make "cmTryCompileExec3447679099/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3447679099.dir/build.make CMakeFiles/cmTryCompileExec3447679099.dir/build
-make[1]: se ingresa al directorio «/home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/CMakeTmp»
-/usr/bin/cmake -E cmake_progress_report /home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec3447679099.dir/CheckFunctionExists.c.o
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec3447679099.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec3447679099
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3447679099.dir/link.txt --verbose=1
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--sysroot,/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ CMakeFiles/cmTryCompileExec3447679099.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3447679099 -rdynamic -lpthreads 
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/../lib/gcc/i686-aldebaran-linux-gnu/4.5.3/../../../../i686-aldebaran-linux-gnu/bin/ld: cannot find -lpthreads
-collect2: ld returned 1 exit status
-make[1]: se sale del directorio «/home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/CMakeTmp»
-make[1]: *** [cmTryCompileExec3447679099] Error 1
-make: *** [cmTryCompileExec3447679099/fast] Error 2
+make[1]: Leaving directory `/home/ruiciro/SPL/EK-SPL/vision/build-cross-atom/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec2964343802] Error 1
+make: *** [cmTryCompileExec2964343802/fast] Error 2
 
 

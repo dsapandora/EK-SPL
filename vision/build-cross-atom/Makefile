@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/roboticaspl/SPL/EK/vision
+CMAKE_SOURCE_DIR = /home/ruiciro/SPL/EK-SPL/vision
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/roboticaspl/SPL/EK/vision/build-cross-atom
+CMAKE_BINARY_DIR = /home/ruiciro/SPL/EK-SPL/vision/build-cross-atom
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -110,9 +110,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles /home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ruiciro/SPL/EK-SPL/vision/build-cross-atom/CMakeFiles /home/ruiciro/SPL/EK-SPL/vision/build-cross-atom/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ruiciro/SPL/EK-SPL/vision/build-cross-atom/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -157,53 +157,29 @@ vision/preinstall:
 	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/preinstall
 .PHONY : vision/preinstall
 
-main.o: main.cpp.o
-.PHONY : main.o
+BallDetection.o: BallDetection.cpp.o
+.PHONY : BallDetection.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/main.cpp.o
-.PHONY : main.cpp.o
+BallDetection.cpp.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/BallDetection.cpp.o
+.PHONY : BallDetection.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-vision.o: vision.cpp.o
-.PHONY : vision.o
-
-# target to build an object file
-vision.cpp.o:
-	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/vision.cpp.o
-.PHONY : vision.cpp.o
-
-vision.i: vision.cpp.i
-.PHONY : vision.i
+BallDetection.i: BallDetection.cpp.i
+.PHONY : BallDetection.i
 
 # target to preprocess a source file
-vision.cpp.i:
-	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/vision.cpp.i
-.PHONY : vision.cpp.i
+BallDetection.cpp.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/BallDetection.cpp.i
+.PHONY : BallDetection.cpp.i
 
-vision.s: vision.cpp.s
-.PHONY : vision.s
+BallDetection.s: BallDetection.cpp.s
+.PHONY : BallDetection.s
 
 # target to generate assembly for a file
-vision.cpp.s:
-	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/vision.cpp.s
-.PHONY : vision.cpp.s
+BallDetection.cpp.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/BallDetection.cpp.s
+.PHONY : BallDetection.cpp.s
 
 # Help Target
 help:
@@ -218,12 +194,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... vision"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... vision.o"
-	@echo "... vision.i"
-	@echo "... vision.s"
+	@echo "... BallDetection.o"
+	@echo "... BallDetection.i"
+	@echo "... BallDetection.s"
 .PHONY : help
 
 

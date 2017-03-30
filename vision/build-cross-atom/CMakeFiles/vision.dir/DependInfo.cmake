@@ -4,8 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/roboticaspl/SPL/EK/vision/main.cpp" "/home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/vision.dir/main.cpp.o"
-  "/home/roboticaspl/SPL/EK/vision/vision.cpp" "/home/roboticaspl/SPL/EK/vision/build-cross-atom/CMakeFiles/vision.dir/vision.cpp.o"
+  "/home/ruiciro/SPL/EK-SPL/vision/BallDetection.cpp" "/home/ruiciro/SPL/EK-SPL/vision/build-cross-atom/CMakeFiles/vision.dir/BallDetection.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -15,10 +14,7 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
 
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
-  "/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include"
-  "/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/alsoap"
-  "/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/boost-1_48"
-  "/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/soap"
+  "/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
