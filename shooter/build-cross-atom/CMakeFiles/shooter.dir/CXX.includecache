@@ -6,16 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/roboticaspl/SPL/EK/shooter/main.cpp
-shooter.h
-/home/roboticaspl/SPL/EK/shooter/shooter.h
-boost/shared_ptr.hpp
--
-alcommon/albroker.h
--
-alcommon/albrokermanager.h
--
-
 /home/roboticaspl/SPL/EK/shooter/shooter.cpp
 shooter.h
 /home/roboticaspl/SPL/EK/shooter/shooter.h
@@ -78,12 +68,6 @@ boost/smart_ptr/enable_shared_from_this.hpp
 boost/noncopyable.hpp
 -
 qi/macro.hpp
--
-
-/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/alcommon/albrokermanager.h
-vector
--
-boost/shared_ptr.hpp
 -
 
 /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include/alcommon/alfunctor.h

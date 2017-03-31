@@ -40,7 +40,7 @@ void Vision::init()
 }
 
 void Vision::onBallDetected(){
-  //qiLogInfo("vision.onBallDetected") << "Executing method on red ball detected event" << std::endl;
+  qiLogInfo("vision.onBallDetected") << "Executing method on red ball detected event" << std::endl;
   AL::ALCriticalSection section(fCallbackMutex);
   headValues = fMotionProxy.getAngles("Head", true);
   fState =  fMemoryProxy.getData("redBallDetected");

@@ -51,6 +51,7 @@ private:
   bool flag;
 
   void leftBumperPressed();
+  void rightBumperPressed();
   void ballDetected();
   void centerBall();
   void positionInBox();

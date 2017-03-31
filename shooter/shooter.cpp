@@ -48,6 +48,7 @@ void Shooter::init()
 
 void Shooter::leftBumperPressed()
 {
+  qiLogInfo("vision.onBallDetected") << "left leftBumperPressed" << std::endl;
   fMemoryProxy.subscribeToMicroEvent("EKBallDetected", "Shooter", "EKBallDetected", "ballDetected");
 }
 
@@ -74,6 +75,8 @@ void Shooter::shoot()
 
 void Shooter::ballDetected()
 {
+
+  qiLogInfo("vision.onBallDetected") << "Shooter Executing method on red ball detected event" << std::endl;
   AL::ALCriticalSection section(fCallbackMutex);
   fState =  fMemoryProxy.getData("EKBallDetected");
 

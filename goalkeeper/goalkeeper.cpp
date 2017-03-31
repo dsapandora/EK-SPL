@@ -19,8 +19,14 @@ fCallbackMutex(AL::ALMutex::createALMutex())
   functionName("ballDetected", getName(), "Guarda en variable");
   BIND_METHOD(Goalkeeper::ballDetected);
 
+  functionName("positionInBox", getName(), "Lugar en area");
+  BIND_METHOD(Goalkeeper::positionInBox);
+
   functionName("leftBumperPressed", getName(), "Hace penal");
   BIND_METHOD(Goalkeeper::leftBumperPressed);
+
+  functionName("rightBumperPressed", getName(), "Se para");
+  BIND_METHOD(Goalkeeper::rightBumperPressed);
 }
 void Goalkeeper::caidaizq()
 {
@@ -78,7 +84,18 @@ void Goalkeeper::leftBumperPressed()
   fMotionProxy.setStiffnesses("Body", 0.7);
   fPostureProxy.goToPosture("StandInit", 0.5f);
   //fMemoryProxy.subscribeToMicroEvent("EKBallDetected", "Goalkeeper", "EKBallDetected", "ballDetected");
+  qiLogInfo("vision.onBallDetected") << "left leftBumperPressed" << std::endl;
   fMemoryProxy.subscribeToMicroEvent("EKBallDetected", "Goalkeeper", "EKBallDetected", "positionInBox");
+}
+
+void Goalkeeper::rightBumperPressed()
+{
+  fMotionProxy.setStiffnesses("Head", 0.7);
+  fMotionProxy.setStiffnesses("Body", 0.7);
+  fPostureProxy.goToPosture("StandInit", 0.5f);
+  //fMemoryProxy.subscribeToMicroEvent("EKBallDetected", "Goalkeeper", "EKBallDetected", "ballDetected");
+  qiLogInfo("vision.onBallDetected") << "right rightBumperPressed" << std::endl;
+  fMemoryProxy.unsubscribeToMicroEvent("EKBallDetected", "Goalkeeper");
 }
 
 void Goalkeeper::centerBall()
@@ -93,6 +110,9 @@ void Goalkeeper::centerBall()
 //and the robot's position relative to a fixed point behind the net.
 void Goalkeeper::positionInBox()
 {
+  AL::ALCriticalSection section(fCallbackMutex);
+  //std::cout << "Hola" << std::endl;
+  
 
   //Fixed point behind the net, used as reference
   //float origin [2] = { 0,0 };
@@ -110,6 +130,9 @@ void Goalkeeper::positionInBox()
 
   ball[0] = cos(thetaTrans)*(float)fState[2][0] - sin(thetaTrans)*(float)fState[2][1] + naoPos[0];
   ball[1] = sin(thetaTrans)*(float)fState[2][0] + cos(thetaTrans)*(float)fState[2][1] + naoPos[1];
+
+  qiLogInfo("vision.onBallDetected") << "Ball 0" << ball[0] << std::endl;
+  qiLogInfo("vision.onBallDetected") << "Ball 1" << ball[1] << std::endl;
 
   //Using a straight line to position the robot between the ball and the net.
   //Slope
@@ -144,9 +167,18 @@ void Goalkeeper::positionInBox()
   if(abs(movR[0])<75){
     ti=ti+ta;
     ta = dcm->getTime(ti);
-    fMotionProxy.setWalkTargetVelocity(uMov[0],uMov[1],uMov[2],0.1); 
+    if(abs(mov[0])>10){
+      fMotionProxy.setWalkTargetVelocity(0,uMov[0],0,0.1); 
+    }else{
+      fMotionProxy.setWalkTargetVelocity(0,0,0,0);
+    }
 
-  }/* else { 
+  }else{
+    fMotionProxy.setWalkTargetVelocity(0,0,0,0);
+  }
+
+  
+  /* else { 
 
     if(newPos[0]>75 && naoPos[0]<75){
 
@@ -163,8 +195,8 @@ void Goalkeeper::positionInBox()
     if(!flag){
       flag = true;
     }else{
-      naoPos[0] = naoPos[0] + uMov[0]*ta;//uMov * TIEMPO (como chingaos lo calculamos no se)
-      naoPos[1] = naoPos[1] + uMov[1]*ta;//uMov * TIEMPO (como chingaos lo calculamos no se) 
+      naoPos[0] = naoPos[0] ;//+ uMov[0]*ta;//uMov * TIEMPO (como chingaos lo calculamos no se)
+      naoPos[1] = naoPos[1] ;//+ uMov[1]*ta;//uMov * TIEMPO (como chingaos lo calculamos no se) 
     }
 //  oldPos[0] = naoPos[0];
 //  oldPos[1] = naoPos[1];
