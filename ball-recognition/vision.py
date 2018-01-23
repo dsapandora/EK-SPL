@@ -18,14 +18,6 @@ img_path = img_home + "SPL/SPQR_Dataset/" + img_beg + str(img_num) + ".png"
 img = cv2.imread(img_path)
 im_gray = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
 
-ilowH = 0
-ihighH = 179
-
-ilowS = 0
-ihighS = 255
-ilowV = 0
-ihighV = 255
-
 # create trackbars for color change
 
 
@@ -41,13 +33,20 @@ while(True):
 	lower_white = np.array([0  , 0 , 116])
 	upper_white = np.array([179, 87, 212])
 
+	lower_green = np.array([87 , 146,  74])
+	upper_green = np.array([115, 199, 190])
+
 #     # Threshold the HSV image to get only blue colors
 	mask_1 = cv2.inRange(hsv, lower_black, upper_black)
 	mask_2 = cv2.inRange(hsv, lower_white, upper_white)
+
+	mask_green = cv2.inRange(hsv, lower_green, upper_green)
 # 	# Bitwise-AND mask and original image	
 	# res_1 = cv2.bitwise_and(frame,frame, mask= mask_1)
 	# res_2 = cv2.bitwise_and(frame,frame, mask= mask_2)
-	kernel = np.ones((5,5), np.uint8)
+
+	# normal kernel. TODO: maybe use a kernel to dilate green only by the sides and not up???
+	kernel = np.ones((5,5), np.uint8)   
 
 	mask_1 = cv2.erode (mask_1, kernel, iterations=1)
 	mask_1 = cv2.dilate(mask_1, kernel, iterations=1)
@@ -59,9 +58,16 @@ while(True):
 	mask_2 = cv2.erode (mask_2, kernel, iterations=1)
 	mask_2 = cv2.dilate(mask_2, kernel, iterations=2)
 
+	mask_green = cv2.erode (mask_green, kernel, iterations = 1)
+	mask_green = cv2.dilate(mask_green, kernel, iterations = 15)
+	mask_green = cv2.erode (mask_green, kernel, iterations = 15)
+
+	# mask_1 = cv2.bitwise_or(mask_1, mask_1, mask = mask_green)
+	# mask_2 = cv2.bitwise_or(mask_2, mask_2, mask = mask_green)
+
 	params = cv2.SimpleBlobDetector_Params()
 	# params.filterByInertia = False
-	params.filterByConvexity = False
+	params.filterByConvexity = False  
 	params.minThreshold = 10;    # the graylevel of images
 	# params.maxThreshold = 200;
 	
@@ -87,6 +93,8 @@ while(True):
 
 	mask_3 = cv2.add(mask_1, mask_2)
 
+	mask_3 = cv2.bitwise_or(mask_3, mask_3, mask = mask_green)
+
 	mask_3 = cv2.dilate(mask_3, kernel, iterations=2)
 	mask_3 = cv2.erode (mask_3, kernel, iterations=2)
 	
@@ -111,6 +119,7 @@ while(True):
 	cv2.imshow('mask_1', im_with_keypoints_1)
 	cv2.imshow('mask_2', im_with_keypoints_2)
 	cv2.imshow('mask_3', im_with_keypoints_3)
+	cv2.imshow('mask_green', mask_green)
 	# cv2.imshow('mask_1_ero', mask_1_erosion)
 	# cv2.imshow('mask_2',mask_2)
 	# cv2.imshow('res',res_3)
@@ -140,26 +149,3 @@ while(True):
 
 
 cv2.destroyAllWindows()
-    # # grab the frame
-    # # ret, frame = cap.read()
-    # frame = img
-    # # get trackbar positions
-    # ilowH = cv2.getTrackbarPos('lowH', 'image')
-    # ihighH = cv2.getTrackbarPos('highH', 'image')
-    # ilowS = cv2.getTrackbarPos('lowS', 'image')
-    # ihighS = cv2.getTrackbarPos('highS', 'image')
-    # ilowV = cv2.getTrackbarPos('lowV', 'image')
-    # ihighV = cv2.getTrackbarPos('highV', 'image')
-
-    # hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-    # lower_hsv = np.array([ilowH, ilowS, ilowV])
-    # higher_hsv = np.array([ihighH, ihighS, ihighV])
-    # mask = cv2.inRange(hsv, lower_hsv, higher_hsv)
-
-    # frame = cv2.bitwise_and(frame, frame, mask=mask)
-
-    # # show thresholded image
-    # cv2.imshow('image', frame)
-    # k = cv2.waitKey(1000) & 0xFF # large wait time to remove freezing
-    # if k == 113 or k == 27:
-    #     break
