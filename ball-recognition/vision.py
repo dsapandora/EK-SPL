@@ -6,7 +6,7 @@ import cv2
 def callback(x):
 	pass
 
-cv2.namedWindow('image')
+# cv2.namedWindow('image')
 
 img_index = 0
 img_num = 310
@@ -36,17 +36,28 @@ while(True):
 	lower_green = np.array([87 , 146,  74])
 	upper_green = np.array([115, 199, 190])
 
+	lower_lines = np.array([ 72,  0, 181])
+	upper_lines = np.array([179, 84, 255])
+
 #     # Threshold the HSV image to get only blue colors
 	mask_1 = cv2.inRange(hsv, lower_black, upper_black)
 	mask_2 = cv2.inRange(hsv, lower_white, upper_white)
 
 	mask_green = cv2.inRange(hsv, lower_green, upper_green)
+	mask_lines = cv2.inRange(hsv, lower_lines, upper_lines)
 # 	# Bitwise-AND mask and original image	
 	# res_1 = cv2.bitwise_and(frame,frame, mask= mask_1)
 	# res_2 = cv2.bitwise_and(frame,frame, mask= mask_2)
 
 	# normal kernel. TODO: maybe use a kernel to dilate green only by the sides and not up???
 	kernel = np.ones((5,5), np.uint8)   
+
+	kernel_field = np.array((
+							[0, 0, 0, 0, 0, 0, 0, 0],
+							[1, 1, 1, 1, 1, 1, 1, 1],
+							[1, 1, 1, 1, 1, 1, 1, 1],
+							[1, 1, 1, 1, 1, 1, 1, 1],
+							[0, 0, 0, 0, 0, 0, 0, 0]), dtype=np.uint8)
 
 	mask_1 = cv2.erode (mask_1, kernel, iterations=1)
 	mask_1 = cv2.dilate(mask_1, kernel, iterations=1)
@@ -59,9 +70,25 @@ while(True):
 	mask_2 = cv2.dilate(mask_2, kernel, iterations=2)
 
 	mask_green = cv2.erode (mask_green, kernel, iterations = 1)
-	mask_green = cv2.dilate(mask_green, kernel, iterations = 15)
-	mask_green = cv2.erode (mask_green, kernel, iterations = 15)
+	mask_green = cv2.dilate(mask_green, kernel_field, iterations = 20)
+	mask_green = cv2.erode (mask_green, kernel_field, iterations = 20)
 
+	# cv2.imshow("m1-presub",mask_1)
+	# cv2.imshow("m2-presub",mask_2)
+	mask_1 = cv2.subtract(mask_1, mask_lines)
+	mask_2 = cv2.subtract(mask_2, mask_lines)
+	# cv2.imshow("m1-possub",mask_1)
+	# cv2.imshow("m2-possub",mask_2)
+	mask_1 = cv2.erode (mask_1, kernel, iterations=1)
+	mask_1 = cv2.dilate(mask_1, kernel, iterations=1)
+
+	mask_2 = cv2.erode (mask_2, kernel, iterations=1)
+	mask_2 = cv2.dilate(mask_2, kernel, iterations=1)
+
+	# cv2.imshow("pre-erode", mask_lines)
+	# mask_lines = cv2.dilate(mask_lines, kernel, iterations = 1)
+	# mask_lines = cv2.erode (mask_lines, kernel, iterations = 1)
+	# cv2.imshow("post-erode", mask_lines)
 	# mask_1 = cv2.bitwise_or(mask_1, mask_1, mask = mask_green)
 	# mask_2 = cv2.bitwise_or(mask_2, mask_2, mask = mask_green)
 
@@ -95,8 +122,8 @@ while(True):
 
 	mask_3 = cv2.bitwise_or(mask_3, mask_3, mask = mask_green)
 
-	mask_3 = cv2.dilate(mask_3, kernel, iterations=2)
-	mask_3 = cv2.erode (mask_3, kernel, iterations=2)
+	# mask_3 = cv2.dilate(mask_3, kernel, iterations=2)
+	# mask_3 = cv2.erode (mask_3, kernel, iterations=2)
 	
 
 	mask_3 = cv2.bitwise_not(mask_3)
