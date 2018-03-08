@@ -1,4 +1,6 @@
 //import numpy as np 
+#include <iostream>
+
 #include "opencv2/opencv.hpp"
 
 using namespace std; 
@@ -138,7 +140,6 @@ int main(int argc, char** argv){
     detector->detect(mask_1, keypoints_1);
     detector->detect(mask_2, keypoints_2);
 
-
     bitwise_not(mask_1, mask_1);
     bitwise_not(mask_2, mask_2);
 
@@ -161,6 +162,12 @@ int main(int argc, char** argv){
 
         //# Detect blobs. 
     detector->detect(mask_3, keypoints_3);
+    cout << "Keypoint size: " << keypoints_3.size() << endl;
+
+    vector<cv::Point_<float>> points;
+    vector<int> v {0};
+    cv::KeyPoint::convert(keypoints_3,points,v);
+    cout << "KeyPoint coordinates x: " << points.at(0).x << "y: " << points.at(0).y << endl;
 
     bitwise_not(mask_3, mask_3); 
     drawKeypoints(mask_3, keypoints_3, im_with_keypoints_3, Scalar(0,0,255), DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
