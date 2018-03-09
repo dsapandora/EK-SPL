@@ -54,6 +54,8 @@ void Vision::onBallDetected(){
 
   // Variable que dice a donde mover la cabeza para centrar la pelota.
   std::vector<float> nextHeadValues(2, 0);
+  // nextHeadValues[0] = -(fVideoDeviceProxy.getImageInfoFromAngularInfo(1, fState[1])[0] - 0.5) + headValues[0]; 
+  // nextHeadValues[1] = (fVideoDeviceProxy.getImageInfoFromAngularInfo(1, fState[1])[1] - 0.5) + headValues[1];
   nextHeadValues[0] = -(fVideoDeviceProxy.getImageInfoFromAngularInfo(1, fState[1])[0] - 0.5) + headValues[0]; 
   nextHeadValues[1] = (fVideoDeviceProxy.getImageInfoFromAngularInfo(1, fState[1])[1] - 0.5) + headValues[1];
 
