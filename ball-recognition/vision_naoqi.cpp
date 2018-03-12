@@ -10,6 +10,7 @@
 // #include <althread/alcriticalsection.h>
 
 #include "opencv2/opencv.hpp"
+#define PI 3.14159265
 
 using namespace std; 
 using namespace cv; 
@@ -17,7 +18,7 @@ using namespace cv;
 int main(int argc, char** argv){ 
 
     int img_index = 0; 
-    int img_num = 346; 
+    int img_num = 365; 
     int img_nums[] = {310,386,288,289,330,346,347,365}; 
     String img_beg = "SPQR_Upper_"; 
     String img_home = "/home/htellezb/"; 
@@ -189,11 +190,12 @@ int main(int argc, char** argv){
     float keyY = points.at(0).y - cY;
     cout << "KeyPoint NAOqi coordinates x: " << keyX << " y: " << keyY << endl;
     //Pixels->angular coordniates using trigonometry for x_ang and camera's HFOV for y_ang 
-    float x_ang = atan2(keyY/keyX);
+    float x_ang = atan2(keyY,keyX) * 180 / PI;
     //Camera's HFOV for NAO v4.0 is 60.97°
     //DFOV 72.6°, HFOV 60.9°, VFOV 47.6°
-    float y_ang = 
-    cout << "Angular NAOqi coordinates x: " << x_ang << " y: " << y_ang << endl;
+    //Linear relation from pixels to angles.
+    float y_ang = -0.095 * keyX + 30.485;
+    cout << "Angular NAOqi coordinates CenterX: " << x_ang << " CenterY: " << y_ang << endl;
 
     bitwise_not(mask_3, mask_3); 
     drawKeypoints(mask_3, keypoints_3, im_with_keypoints_3, Scalar(0,0,255), DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
