@@ -184,8 +184,16 @@ int main(int argc, char** argv){
     cout << "Image size x: " << size.width << " y: " << size.height << endl;
     float cX = size.width / 2.0;
     float cY = size.height / 2.0;
+    //Translation to match NAOqi coordinate system
+    float keyX = -(points.at(0).x - cX);
+    float keyY = points.at(0).y - cY;
+    cout << "KeyPoint NAOqi coordinates x: " << keyX << " y: " << keyY << endl;
     //Pixels->angular coordniates using trigonometry for x_ang and camera's HFOV for y_ang 
-    //float x_ang = 
+    float x_ang = atan2(keyY/keyX);
+    //Camera's HFOV for NAO v4.0 is 60.97°
+    //DFOV 72.6°, HFOV 60.9°, VFOV 47.6°
+    float y_ang = 
+    cout << "Angular NAOqi coordinates x: " << x_ang << " y: " << y_ang << endl;
 
     bitwise_not(mask_3, mask_3); 
     drawKeypoints(mask_3, keypoints_3, im_with_keypoints_3, Scalar(0,0,255), DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
