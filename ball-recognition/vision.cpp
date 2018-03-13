@@ -1,20 +1,24 @@
-//import numpy as np 
+//Code to recognize a black and white ball in a football environment given
+//certain color thresholds.
+
 #include <iostream>
+#include <math.h>
 
 #include "opencv2/opencv.hpp"
+#define PI 3.14159265
 
 using namespace std; 
 using namespace cv; 
-//def callback(x): //	pass 
+
 int main(int argc, char** argv){ 
 
     int img_index = 0; 
-    int img_num = 346; 
+    int img_num = 365; 
     int img_nums[] = {310,386,288,289,330,346,347,365}; 
     String img_beg = "SPQR_Upper_"; 
     String img_home = "/home/htellezb/"; 
     String img_path = img_home + "SPQR_Dataset/" + img_beg + to_string(img_num) + ".png"; 
-
+    String img_path = "/home/htellezb/Pictures/bola.jpg";
 
     Mat img = imread(img_path);
     Mat im_gray = imread(img_path, CV_LOAD_IMAGE_GRAYSCALE); 
@@ -37,6 +41,7 @@ int main(int argc, char** argv){
 
 
     Mat mask_1, mask_2, mask_green, mask_lines;
+
         //Threshold the HSV image to get only important colors
     inRange(hsv, lower_black, upper_black, mask_1);
 
@@ -55,11 +60,6 @@ int main(int argc, char** argv){
 
     Mat kernel = Mat::ones(5,5,CV_8U);
 
-    //float kdata[] = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0};
-    //Mat kernel_field(5,7,CV_8U,kdata);
-    //Mat kernel_field = (Mat_<double>(5,8) << 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0);
-    //Mat kernel_field(5,7,CV_8U)
-
     //Th rectangular structuring element considers Size(columns,rows)
     //Mat kernel_field = getStructuringElement(MORPH_RECT, Size(7,5));
     Mat kernel_field = getStructuringElement(MORPH_RECT, Size(5,3));
@@ -76,62 +76,29 @@ int main(int argc, char** argv){
     erode (mask_2, mask_2, kernel, p, 1);
     dilate(mask_2, mask_2, kernel, p, 2);
 
-    //imshow("mask_green_pre",mask_green);
-
     erode (mask_green, mask_green, kernel, p, 1);
     dilate (mask_green, mask_green, kernel, p, 1);
-    //imshow("mask_green_erdil1",mask_green);
+
     dilate(mask_green, mask_green, kernel_field, p, 20);
-    //imshow("mask_green_dil20",mask_green);
     erode (mask_green, mask_green, kernel_field, p, 20);
-
-
-        //# cv2.imshow("m1-presub",mask_1) 
-        //# cv2.imshow("m2-presub",mask_2) 
 
     subtract(mask_1, mask_lines, mask_1);
     subtract(mask_2, mask_lines, mask_2);
-
-        //# cv2.imshow("m1-possub",mask_1) 
-        //# cv2.imshow("m2-possub",mask_2) 
-
 
     erode (mask_1, mask_1, kernel, p, 1);
     dilate(mask_1, mask_1, kernel, p, 1);
     erode (mask_2, mask_2, kernel, p, 1);
     dilate(mask_2, mask_2, kernel, p, 1);
 
-
-        /*# cv2.imshow("pre-erode", mask_lines) 
-        # mask_lines = cv2.dilate(mask_lines, kernel, iterations = 1) 
-        # mask_lines = cv2.erode (mask_lines, kernel, iterations = 1) 
-        # cv2.imshow("post-erode", mask_lines) 
-        # mask_1 = cv2.bitwise_or(mask_1, mask_1, mask = mask_green) 
-        # mask_2 = cv2.bitwise_or(mask_2, mask_2, mask = mask_green) */
-
-
     SimpleBlobDetector::Params params;
 
-        //# params.filterByInertia = False 
     params.filterByConvexity = false;
     params.minThreshold = 10; 
-
-        /*# the graylevel of images 
-        # params.maxThreshold = 200; 
-        # params.filterByColor = True 
-        # params.blobColor = 255 
-        # Fiter by Area 
-        # params.filterByArea = True 
-        # params.minArea = 300 
-        */
-
 
     Ptr<SimpleBlobDetector> detector = SimpleBlobDetector::create(params);
 
     bitwise_not(mask_1, mask_1);
     bitwise_not(mask_2, mask_2);
-
-        //# Detect blobs. 
 
     vector<KeyPoint> keypoints_1;
     vector<KeyPoint> keypoints_2;
@@ -155,30 +122,43 @@ int main(int argc, char** argv){
     add(mask_1, mask_2, mask_3);
     bitwise_and(mask_3, mask_green, mask_3);
 
-        //# mask_3 = cv2.dilate(mask_3, kernel, iterations=2) 
-        //# mask_3 = cv2.erode (mask_3, kernel, iterations=2) 
-
     bitwise_not(mask_3, mask_3);
 
         //# Detect blobs. 
     detector->detect(mask_3, keypoints_3);
-    cout << "Keypoint size: " << keypoints_3.size() << endl;
+    //cout << "Keypoint size: " << keypoints_3.size() << endl;
 
+    //Convertion from keypoint 0 (v) to points
     vector<cv::Point_<float>> points;
     vector<int> v {0};
     cv::KeyPoint::convert(keypoints_3,points,v);
-    cout << "KeyPoint coordinates x: " << points.at(0).x << "y: " << points.at(0).y << endl;
+    cout << "KeyPoint coordinates x: " << points.at(0).x << " y: " << points.at(0).y << endl;
+    
+    //Convertion from pixels to angular coordinates as explained on AlRedBallDetection->BallInfo->centerX,centerY
+    //Get frame size and set center
+    Size size = frame.size();
+    cout << "Image size x: " << size.width << " y: " << size.height << endl;
+    float cX = size.width / 2.0;
+    float cY = size.height / 2.0;
+    //Translation to match NAOqi coordinate system
+    float keyX = -(points.at(0).x - cX);
+    float keyY = points.at(0).y - cY;
+    cout << "KeyPoint NAOqi coordinates x: " << keyX << " y: " << keyY << endl;
+    //Pixels->angular coordniates using trigonometry for x_ang and camera's HFOV for y_ang 
+    float x_rad = atan2(keyY,keyX);
+    float x_ang = x_rad * 180 / PI;
+    //Camera's HFOV for NAO v4.0 is 60.97°
+    //DFOV 72.6°, HFOV 60.9°, VFOV 47.6°
+    //Linear relation from pixels to angles.
+    float y_ang = -0.095 * keyX + 30.485;
+    float y_rad = y_ang * PI / 180;
+
+    cout << "Angular (degrees) NAOqi coordinates CenterX: " << x_ang << " CenterY: " << y_ang << endl;
+    cout << "Angular (radians) NAOqi coordinates CenterX: " << x_rad << " CenterY: " << y_rad << endl;
 
     bitwise_not(mask_3, mask_3); 
     drawKeypoints(mask_3, keypoints_3, im_with_keypoints_3, Scalar(0,0,255), DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
     drawKeypoints(frame, keypoints_3, frame, Scalar(0,0,255), DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
-
-         /*# cv2.imshow('mask_1_orig',mask_1) 
-         # cv2.drawContours(mask_1, contours, -1, (0,255,0), 3) 
-         # res_3 = cv2.bitwise_and(mask_1, mask_2) 
-         */
-
-        //# cv2.imshow('mask_1',mask_1) 
 
     imshow("mask_1", im_with_keypoints_1); 
     imshow("mask_2", im_with_keypoints_2); 
