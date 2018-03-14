@@ -9,6 +9,11 @@
 
 #include <qi/log.hpp>
 
+AL::ALMemoryProxy *memory = new AL::ALMemoryProxy(pBroker);
+memory->insertData("GameCtrl/teamNumber", <1>); //must be non-zero
+memory->insertData("GameCtrl/teamColour", <>);//omitted, black
+memory->insertData("GameCtrl/playerNumber", <1>); //goalkeeper
+
 Goalkeeper::Goalkeeper(boost::shared_ptr<AL::ALBroker> broker,
                    const std::string& name)
   : AL::ALModule(broker, name),
