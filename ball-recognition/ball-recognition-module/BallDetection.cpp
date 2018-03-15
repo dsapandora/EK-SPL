@@ -7,7 +7,20 @@
 #include <alvalue/alvalue.h>
 #include <alcommon/alproxy.h>
 #include <qi/log.hpp>
+
+//Video related includes
 #include <althread/alcriticalsection.h>
+#include <alproxies/alvideodeviceproxy.h>
+#include <alvision/alimage.h>
+#include <alvision/alvisiondefinitions.h>
+#include <alerror/alerror.h>
+
+//CV
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+
+using namespace AL;
+using namespace cv;
 
 BallDetection::BallDetection(boost::shared_ptr<AL::ALBroker> broker, const std::string& name)
 : AL::ALModule(broker, name), fCallbackMutex(AL::ALMutex::createALMutex())
@@ -47,15 +60,41 @@ void BallDetection::bwBallDetection(){
   AL::ALCriticalSection section(fCallbackMutex);
   /////////////////////////////////////////////////////////////////////////////////////
   
-  //Use fState to get image from camera
-  fState =  fMemoryProxy.getData("redBallDetected");
+  /** Create a proxy to ALVideoDevice on the robot.*/
+  ALVideoDeviceProxy camProxy("169.254.35.27", 9559);
+
+  /** Subscribe a client image requiring 320*240 and BGR colorspace.*/
+  const std::string clientName = camProxy.subscribe("test", kQVGA, kBGRColorSpace, 30);
+
+  /** Create an cv::Mat header to wrap into an opencv image.*/
+  cv::Mat imgHeader = cv::Mat(cv::Size(320, 240), CV_8UC3);
+
+  /** Create a OpenCV window to display the images. */
+  // cv::namedWindow("images");
+
+  ALValue img = camProxy.getImageRemote(clientName);
+
+  /** Access the image buffer (6th field) and assign it to the opencv image
+  //* container. */
+  imgHeader.data = (uchar*) img[6].GetBinary();
+
+  /** Tells to ALVideoDevice that it can give back the image buffer to the
+    * driver. Optional after a getImageRemote but MANDATORY after a getImageLocal.*/
+  camProxy.releaseImage(clientName);
+
+  /** Display the iplImage on screen.*/
+  //   cv::imshow("images", imgHeader);
+
+  /** Cleanup.*/
+  camProxy.unsubscribe(clientName);
 
   AL::ALValue value;
 
-  //-----------------------------------------------------------------------
+  // //-----------------------------------------------------------------------
 
-  //imread should take the NAO's camera as input
-  Mat img = imread(img_path);
+  // //imread should take the NAO's camera as input
+  // //Mat img = imread(img_path);
+  Mat img = imgHeader;
   Mat im_gray = imread(img_path, CV_LOAD_IMAGE_GRAYSCALE); 
 
   Mat frame = img;
@@ -157,7 +196,7 @@ void BallDetection::bwBallDetection(){
   detector->detect(mask_3, keypoints_3);
   //cout << "Number of keypoints: " << keypoints_3.size() << endl;
 
-  //Convertion from keypoint 0 (v serves as a mask to indicate which keypoint) to points
+  //Conversion from keypoint 0 (v serves as a mask to indicate which keypoint) to points
   vector<cv::Point_<float>> points;
   vector<int> v {0};
   cv::KeyPoint::convert(keypoints_3,points,v);
@@ -187,6 +226,7 @@ void BallDetection::bwBallDetection(){
   //The values used by vision.cpp are the angular coordinates in radians
   value.arrayPush(x_rad);
   value.arrayPush(y_rad);
+  value.arrayPush(1);
 
   //-----------------------------------------------------------------------
 
