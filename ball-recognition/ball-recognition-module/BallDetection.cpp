@@ -15,12 +15,22 @@
 #include <alvision/alvisiondefinitions.h>
 #include <alerror/alerror.h>
 
+//Log
+#include <cstdlib>  //for atexit
+#include <qi/log.hpp>
+
 //CV
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
+#include "opencv2/opencv.hpp"
+#include <opencv2/features2d/features2d.hpp>
+
+
+#define PI 3.14159265
 
 using namespace AL;
 using namespace cv;
+using namespace std; 
 
 BallDetection::BallDetection(boost::shared_ptr<AL::ALBroker> broker, const std::string& name)
 : AL::ALModule(broker, name), fCallbackMutex(AL::ALMutex::createALMutex())
@@ -49,6 +59,8 @@ void BallDetection::init()
     fState = fMemoryProxy.getData("redBallDetected");
     fMemoryProxy.subscribeToEvent("redBallDetected", "BallDetection", "bwBallDetection");
     fVideoDeviceProxy.setParam(18, 1);
+    qi::log::init();
+    atexit(qi::log::destroy);
   }
   catch (const AL::ALError& e) {
     qiLogError("BallDetection.init") << e.what() << std::endl;
@@ -61,10 +73,10 @@ void BallDetection::bwBallDetection(){
   /////////////////////////////////////////////////////////////////////////////////////
   
   /** Create a proxy to ALVideoDevice on the robot.*/
-  ALVideoDeviceProxy camProxy("169.254.35.27", 9559);
+  ALVideoDeviceProxy cameraProxy("169.254.35.27", 9559);
 
   /** Subscribe a client image requiring 320*240 and BGR colorspace.*/
-  const std::string clientName = camProxy.subscribe("test", kQVGA, kBGRColorSpace, 30);
+  const std::string clientName = fVideoDeviceProxy.subscribe("test", kQVGA, kBGRColorSpace, 30);
 
   /** Create an cv::Mat header to wrap into an opencv image.*/
   cv::Mat imgHeader = cv::Mat(cv::Size(320, 240), CV_8UC3);
@@ -72,21 +84,24 @@ void BallDetection::bwBallDetection(){
   /** Create a OpenCV window to display the images. */
   // cv::namedWindow("images");
 
-  ALValue img = camProxy.getImageRemote(clientName);
+  // ALValue img = fVideoDeviceProxy.getImageRemote(clientName);
+  ALImage* img = (ALImage*) fVideoDeviceProxy.getImageLocal(clientName);
 
   /** Access the image buffer (6th field) and assign it to the opencv image
   //* container. */
-  imgHeader.data = (uchar*) img[6].GetBinary();
+  //imgHeader.data = (uchar*) img[6].GetBinary();
+  imgHeader.data = img->getData();
+  qiLogInfo("BallDetection.bwBallDetection") << "Getting image" << std::endl;
 
   /** Tells to ALVideoDevice that it can give back the image buffer to the
     * driver. Optional after a getImageRemote but MANDATORY after a getImageLocal.*/
-  camProxy.releaseImage(clientName);
+  fVideoDeviceProxy.releaseImage(clientName);
 
   /** Display the iplImage on screen.*/
   //   cv::imshow("images", imgHeader);
 
   /** Cleanup.*/
-  camProxy.unsubscribe(clientName);
+  fVideoDeviceProxy.unsubscribe(clientName);
 
   AL::ALValue value;
 
@@ -94,11 +109,11 @@ void BallDetection::bwBallDetection(){
 
   // //imread should take the NAO's camera as input
   // //Mat img = imread(img_path);
-  Mat img = imgHeader;
-  Mat im_gray = imread(img_path, CV_LOAD_IMAGE_GRAYSCALE); 
+  //Mat img = imgHeader;
+  //Mat im_gray = imread(img_path, CV_LOAD_IMAGE_GRAYSCALE); 
 
-  Mat frame = img;
-  Mat hsv; 
+  Mat frame = imgHeader;
+  Mat hsv;
   cvtColor(frame, hsv, CV_BGR2HSV); 
   
   //Threshold values are determined with calibration code
@@ -130,7 +145,7 @@ void BallDetection::bwBallDetection(){
 
   //Th rectangular structuring element considers Size(columns,rows)
   //Mat kernel_field = getStructuringElement(MORPH_RECT, Size(7,5));
-  Mat kernel_field = getStructuringElement(MORPH_RECT, Size(5,3));
+  Mat kernel_field = cv::getStructuringElement(MORPH_RECT, Size(5,3));
 
   Point p = Point(-1,-1);
 
@@ -162,8 +177,9 @@ void BallDetection::bwBallDetection(){
 
   params.filterByConvexity = false;
   params.minThreshold = 10; 
-
-  Ptr<SimpleBlobDetector> detector = SimpleBlobDetector::create(params);
+  
+  SimpleBlobDetector detector(params);
+  // cv::Ptr<cv::SimpleBlobDetector> detector = cv::SimpleBlobDetector::create(params);
 
   bitwise_not(mask_1, mask_1);
   bitwise_not(mask_2, mask_2);
@@ -172,8 +188,8 @@ void BallDetection::bwBallDetection(){
   vector<KeyPoint> keypoints_2;
   vector<KeyPoint> keypoints_3;
 
-  detector->detect(mask_1, keypoints_1);
-  detector->detect(mask_2, keypoints_2);
+  detector.detect(mask_1, keypoints_1);
+  detector.detect(mask_2, keypoints_2);
 
   bitwise_not(mask_1, mask_1);
   bitwise_not(mask_2, mask_2);
@@ -193,7 +209,7 @@ void BallDetection::bwBallDetection(){
   bitwise_not(mask_3, mask_3);
 
   //# Detect blobs. 
-  detector->detect(mask_3, keypoints_3);
+  detector.detect(mask_3, keypoints_3);
   //cout << "Number of keypoints: " << keypoints_3.size() << endl;
 
   //Conversion from keypoint 0 (v serves as a mask to indicate which keypoint) to points
@@ -223,10 +239,13 @@ void BallDetection::bwBallDetection(){
   cout << "Angular (degrees) NAOqi coordinates CenterX: " << x_ang << " CenterY: " << y_ang << endl;
   cout << "Angular (radians) NAOqi coordinates CenterX: " << x_rad << " CenterY: " << y_rad << endl;
 
+  qiLogInfo("BallDetection.bwBallDetection") << "CenterX: " << x_rad << std::endl;
+  qiLogInfo("BallDetection.bwBallDetection") << "CenterY: " << y_rad << std::endl;
+
   //The values used by vision.cpp are the angular coordinates in radians
   value.arrayPush(x_rad);
   value.arrayPush(y_rad);
-  value.arrayPush(1);
+  //value.arrayPush(1);
 
   //-----------------------------------------------------------------------
 
