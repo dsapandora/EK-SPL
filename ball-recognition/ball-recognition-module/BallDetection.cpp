@@ -50,6 +50,8 @@ BallDetection::~BallDetection()
 void BallDetection::init()
 {
   try {
+
+    cout << "BallDetection running!" << endl;
     fMemoryProxy = AL::ALMemoryProxy(getParentBroker());
     fMotionProxy = AL::ALMotionProxy(getParentBroker());
     fVideoDeviceProxy = AL::ALVideoDeviceProxy(getParentBroker());
