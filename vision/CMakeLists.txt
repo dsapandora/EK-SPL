@@ -4,10 +4,9 @@ project(vision)
 find_package(qibuild)
 
 set(_srcs
-   # vision.cpp
-   # vision.h
-    #main.cpp
-    BallDetection.cpp)
+    vision.cpp
+    vision.h
+    main.cpp)
 
 qi_create_lib(vision SHARED ${_srcs} SUBFOLDER naoqi)
 

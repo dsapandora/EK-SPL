@@ -33,8 +33,10 @@ void Vision::init()
     ////////////////////////////////////////////////////////////////////////////
     //Comenzaremos a hacer cambios aqui para buscar detectar pelotas
 
-    fState = fMemoryProxy.getData("redBallDetected");
-    fMemoryProxy.subscribeToEvent("redBallDetected", "Vision", "onBallDetected");
+    // fState = fMemoryProxy.getData("redBallDetected");
+    // fMemoryProxy.subscribeToEvent("redBallDetected", "Vision", "onBallDetected");
+    // fState = fMemoryProxy.getData("bwBallDetected");
+    fMemoryProxy.subscribeToEvent("bwBallDetected", "Vision", "onBallDetected");
     fVideoDeviceProxy.setParam(18, 1);
   }
   catch (const AL::ALError& e) {
@@ -47,11 +49,10 @@ void Vision::onBallDetected(){
   AL::ALCriticalSection section(fCallbackMutex);
   headValues = fMotionProxy.getAngles("Head", true);
   /////////////////////////////////////////////////////////////////////////////////////
-  fState =  fMemoryProxy.getData("redBallDetected");
+  fState =  fMemoryProxy.getData("bwBallDetected");
 
   AL::ALValue value;
   
-
   // Variable que dice a donde mover la cabeza para centrar la pelota.
   std::vector<float> nextHeadValues(2, 0);
   // nextHeadValues[0] = -(fVideoDeviceProxy.getImageInfoFromAngularInfo(1, fState[1])[0] - 0.5) + headValues[0]; 

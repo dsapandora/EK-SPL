@@ -12,6 +12,7 @@ img_num = 386
 img_beg = "SPQR_Upper_"
 img_home = "/home/egranadoo/"
 img_path = img_home + "SPL/SPQR_Dataset/" + img_beg + str(img_num) + ".png"
+img_path = "/home/htellezb/Downloads/IMG_5977.JPG"
 
 img = cv2.imread(img_path)
 

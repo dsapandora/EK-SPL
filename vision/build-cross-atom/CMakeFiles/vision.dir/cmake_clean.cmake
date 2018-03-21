@@ -1,5 +1,6 @@
-FILE(REMOVE_RECURSE
-  "CMakeFiles/vision.dir/BallDetection.cpp.o"
+file(REMOVE_RECURSE
+  "CMakeFiles/vision.dir/vision.cpp.o"
+  "CMakeFiles/vision.dir/main.cpp.o"
   "sdk/lib/naoqi/libvision.pdb"
   "sdk/lib/naoqi/libvision.so"
   "sdk/lib/naoqi/libvision.pdb"
@@ -7,6 +8,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/vision.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/vision.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

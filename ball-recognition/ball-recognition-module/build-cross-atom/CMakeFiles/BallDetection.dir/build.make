@@ -133,9 +133,19 @@ sdk/lib/naoqi/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao
 sdk/lib/naoqi/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_date_time-mt.so
 sdk/lib/naoqi/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_system-mt.so
 sdk/lib/naoqi/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libdl.so
+sdk/lib/naoqi/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_highgui.so
+sdk/lib/naoqi/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_imgproc.so
+sdk/lib/naoqi/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_features2d.so
+sdk/lib/naoqi/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_flann.so
+sdk/lib/naoqi/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_core.so
 sdk/lib/naoqi/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_thread-mt.so
 sdk/lib/naoqi/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_date_time-mt.so
 sdk/lib/naoqi/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libdl.so
+sdk/lib/naoqi/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_highgui.so
+sdk/lib/naoqi/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_imgproc.so
+sdk/lib/naoqi/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_features2d.so
+sdk/lib/naoqi/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_flann.so
+sdk/lib/naoqi/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_core.so
 sdk/lib/naoqi/libBallDetection.so: CMakeFiles/BallDetection.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library sdk/lib/naoqi/libBallDetection.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/BallDetection.dir/link.txt --verbose=$(VERBOSE)
@@ -173,9 +183,19 @@ CMakeFiles/CMakeRelink.dir/libBallDetection.so: /home/htellezb/Aldebaran-softwar
 CMakeFiles/CMakeRelink.dir/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_date_time-mt.so
 CMakeFiles/CMakeRelink.dir/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_system-mt.so
 CMakeFiles/CMakeRelink.dir/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libdl.so
+CMakeFiles/CMakeRelink.dir/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_highgui.so
+CMakeFiles/CMakeRelink.dir/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_imgproc.so
+CMakeFiles/CMakeRelink.dir/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_features2d.so
+CMakeFiles/CMakeRelink.dir/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_flann.so
+CMakeFiles/CMakeRelink.dir/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_core.so
 CMakeFiles/CMakeRelink.dir/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_thread-mt.so
 CMakeFiles/CMakeRelink.dir/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_date_time-mt.so
 CMakeFiles/CMakeRelink.dir/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libdl.so
+CMakeFiles/CMakeRelink.dir/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_highgui.so
+CMakeFiles/CMakeRelink.dir/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_imgproc.so
+CMakeFiles/CMakeRelink.dir/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_features2d.so
+CMakeFiles/CMakeRelink.dir/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_flann.so
+CMakeFiles/CMakeRelink.dir/libBallDetection.so: /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_core.so
 CMakeFiles/CMakeRelink.dir/libBallDetection.so: CMakeFiles/BallDetection.dir/relink.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX shared library CMakeFiles/CMakeRelink.dir/libBallDetection.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/BallDetection.dir/relink.txt --verbose=$(VERBOSE)

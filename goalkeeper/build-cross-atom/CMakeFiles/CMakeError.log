@@ -1,23 +1,22 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp
+Change Dir: /home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1467467395/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1467467395.dir/build.make CMakeFiles/cmTryCompileExec1467467395.dir/build
-make[1]: Entering directory `/home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1467467395.dir/CheckSymbolExists.c.o
-/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD    -o CMakeFiles/cmTryCompileExec1467467395.dir/CheckSymbolExists.c.o   -c /home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec1467467395
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1467467395.dir/link.txt --verbose=1
-/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD   -Wl,--sysroot,/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ CMakeFiles/cmTryCompileExec1467467395.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1467467395 -rdynamic 
-CMakeFiles/cmTryCompileExec1467467395.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:"/usr/bin/gmake" "cmTC_78b8c/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_78b8c.dir/build.make CMakeFiles/cmTC_78b8c.dir/build
+gmake[1]: Entering directory '/home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_78b8c.dir/CheckSymbolExists.c.o
+/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD    -o CMakeFiles/cmTC_78b8c.dir/CheckSymbolExists.c.o   -c /home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_78b8c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_78b8c.dir/link.txt --verbose=1
+/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc  --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD   -Wl,--sysroot,/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/  -rdynamic CMakeFiles/cmTC_78b8c.dir/CheckSymbolExists.c.o  -o cmTC_78b8c 
+CMakeFiles/cmTC_78b8c.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x1): undefined reference to `pthread_create'
 collect2: ld returned 1 exit status
-make[1]: Leaving directory `/home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp'
-make[1]: *** [cmTryCompileExec1467467395] Error 1
-make: *** [cmTryCompileExec1467467395/fast] Error 2
+gmake[1]: *** [CMakeFiles/cmTC_78b8c.dir/build.make:98: cmTC_78b8c] Error 1
+gmake[1]: Leaving directory '/home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:126: cmTC_78b8c/fast] Error 2
 
-File /home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -33,21 +32,122 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp
+Change Dir: /home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec447997743/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec447997743.dir/build.make CMakeFiles/cmTryCompileExec447997743.dir/build
-make[1]: Entering directory `/home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec447997743.dir/CheckFunctionExists.c.o
-/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec447997743.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec447997743
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec447997743.dir/link.txt --verbose=1
-/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--sysroot,/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ CMakeFiles/cmTryCompileExec447997743.dir/CheckFunctionExists.c.o  -o cmTryCompileExec447997743 -rdynamic -lpthreads 
-/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/../lib/gcc/i686-aldebaran-linux-gnu/4.5.3/../../../../i686-aldebaran-linux-gnu/bin/ld: cannot find -lpthreads
+Run Build Command:"/usr/bin/gmake" "cmTC_c3f5b/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_c3f5b.dir/build.make CMakeFiles/cmTC_c3f5b.dir/build
+gmake[1]: Entering directory '/home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c3f5b.dir/CheckFunctionExists.c.o
+/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_c3f5b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c3f5b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c3f5b.dir/link.txt --verbose=1
+/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc  --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--sysroot,/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/  -rdynamic CMakeFiles/cmTC_c3f5b.dir/CheckFunctionExists.c.o  -o cmTC_c3f5b -lpthreads 
+/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/../lib/gcc/i686-aldebaran-linux-gnu/4.5.3/../../../../i686-aldebaran-linux-gnu/bin/ld: cannot find -lpthreads
 collect2: ld returned 1 exit status
-make[1]: Leaving directory `/home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp'
-make[1]: *** [cmTryCompileExec447997743] Error 1
-make: *** [cmTryCompileExec447997743/fast] Error 2
+gmake[1]: *** [CMakeFiles/cmTC_c3f5b.dir/build.make:98: cmTC_c3f5b] Error 1
+gmake[1]: Leaving directory '/home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:126: cmTC_c3f5b/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_7a7c1/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_7a7c1.dir/build.make CMakeFiles/cmTC_7a7c1.dir/build
+gmake[1]: Entering directory '/home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7a7c1.dir/CheckSymbolExists.c.o
+/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD    -o CMakeFiles/cmTC_7a7c1.dir/CheckSymbolExists.c.o   -c /home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_7a7c1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7a7c1.dir/link.txt --verbose=1
+/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc  --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD   -Wl,--sysroot,/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/  -rdynamic CMakeFiles/cmTC_7a7c1.dir/CheckSymbolExists.c.o  -o cmTC_7a7c1 
+CMakeFiles/cmTC_7a7c1.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1): undefined reference to `pthread_create'
+collect2: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_7a7c1.dir/build.make:98: cmTC_7a7c1] Error 1
+gmake[1]: Leaving directory '/home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:126: cmTC_7a7c1/fast] Error 2
+
+File /home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_f25c4/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_f25c4.dir/build.make CMakeFiles/cmTC_f25c4.dir/build
+gmake[1]: Entering directory '/home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f25c4.dir/CheckFunctionExists.c.o
+/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_f25c4.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f25c4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f25c4.dir/link.txt --verbose=1
+/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc  --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--sysroot,/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/  -rdynamic CMakeFiles/cmTC_f25c4.dir/CheckFunctionExists.c.o  -o cmTC_f25c4 -lpthreads 
+/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/../lib/gcc/i686-aldebaran-linux-gnu/4.5.3/../../../../i686-aldebaran-linux-gnu/bin/ld: cannot find -lpthreads
+collect2: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_f25c4.dir/build.make:98: cmTC_f25c4] Error 1
+gmake[1]: Leaving directory '/home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:126: cmTC_f25c4/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_38ed4/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_38ed4.dir/build.make CMakeFiles/cmTC_38ed4.dir/build
+gmake[1]: Entering directory '/home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_38ed4.dir/CheckSymbolExists.c.o
+/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD    -o CMakeFiles/cmTC_38ed4.dir/CheckSymbolExists.c.o   -c /home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_38ed4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_38ed4.dir/link.txt --verbose=1
+/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc  --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD   -Wl,--sysroot,/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/  -rdynamic CMakeFiles/cmTC_38ed4.dir/CheckSymbolExists.c.o  -o cmTC_38ed4 
+CMakeFiles/cmTC_38ed4.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1): undefined reference to `pthread_create'
+collect2: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_38ed4.dir/build.make:98: cmTC_38ed4] Error 1
+gmake[1]: Leaving directory '/home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:126: cmTC_38ed4/fast] Error 2
+
+File /home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_ef32a/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_ef32a.dir/build.make CMakeFiles/cmTC_ef32a.dir/build
+gmake[1]: Entering directory '/home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ef32a.dir/CheckFunctionExists.c.o
+/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_ef32a.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_ef32a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ef32a.dir/link.txt --verbose=1
+/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc  --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--sysroot,/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/  -rdynamic CMakeFiles/cmTC_ef32a.dir/CheckFunctionExists.c.o  -o cmTC_ef32a -lpthreads 
+/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/../lib/gcc/i686-aldebaran-linux-gnu/4.5.3/../../../../i686-aldebaran-linux-gnu/bin/ld: cannot find -lpthreads
+collect2: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_ef32a.dir/build.make:98: cmTC_ef32a] Error 1
+gmake[1]: Leaving directory '/home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:126: cmTC_ef32a/fast] Error 2
 
 

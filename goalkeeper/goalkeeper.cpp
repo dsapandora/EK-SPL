@@ -53,7 +53,7 @@ void Goalkeeper::init()
     fMemoryProxy.subscribeToEvent("LeftBumperPressed", "Goalkeeper", "LefttBumperPressed", "leftBumperPressed");
     fMotionProxy.setStiffnesses("Head", 0.7);
     fMotionProxy.setStiffnesses("Body", 0.7);
-    fPostureProxy.goToPosture("StandInit", 0.5f);
+    //fPostureProxy.goToPosture("StandInit", 0.5f);
   }
   catch (const AL::ALError& e) {
     qiLogError("goalkeeper.init") << e.what() << std::endl;

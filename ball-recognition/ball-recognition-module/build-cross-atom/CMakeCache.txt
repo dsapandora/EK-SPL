@@ -69,7 +69,7 @@ ALVALUE_INCLUDE_DIRS:STRING=/home/htellezb/Aldebaran-software/linux64-nao-atom-c
 //Path to a library.
 ALVALUE_LIBRARY:FILEPATH=/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalvalue.so
 
-BALLDETECTION_DEPENDS:STRING=ALCOMMON;ALSOAP;RTTOOLS;ALTHREAD;BOOST_SIGNALS;BOOST_PROGRAM_OPTIONS;ALVALUE;TINYXML;RT;QI;ALERROR;BOOST;BOOST_FILESYSTEM;BOOST_THREAD;BOOST_SYSTEM;PTHREAD;DL
+BALLDETECTION_DEPENDS:STRING=ALCOMMON;ALSOAP;RTTOOLS;ALTHREAD;BOOST_SIGNALS;BOOST_PROGRAM_OPTIONS;ALVALUE;TINYXML;RT;QI;ALERROR;BOOST;BOOST_FILESYSTEM;BOOST_THREAD;BOOST_SYSTEM;PTHREAD;DL;OPENCV2_HIGHGUI;OPENCV2_IMGPROC;OPENCV2_FEATURES2D;OPENCV2_FLANN;OPENCV2_CORE
 
 //The directory containing a CMake configuration file for BOOST.
 BOOST_DIR:PATH=/home/htellezb/qibuild-1.14.5/qibuild-1.14.3/cmake/qibuild/modules
@@ -135,7 +135,7 @@ BOOST_THREAD_EXECUTABLE:STRING=
 BOOST_THREAD_EXECUTABLE_DEBUG:STRING=
 
 //Dependencies for the target
-BallDetection_LIB_DEPENDS:STATIC=general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalproxies.so;general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalsoap.so;general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/librttools.so;general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalthread.so;optimized;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_signals-mt-1_48.so;debug;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_signals-mt.so;optimized;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_program_options-mt-1_48.so;debug;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_program_options-mt.so;general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalvalue.so;general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libtinyxml.so;general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/librt.so;general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libqi.so;general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalerror.so;optimized;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_filesystem-mt-1_48.so;debug;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_filesystem-mt.so;optimized;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_system-mt-1_48.so;debug;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_system-mt.so;optimized;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_thread-mt-1_48.so;debug;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_thread-mt.so;optimized;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_date_time-mt-1_48.so;debug;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_date_time-mt.so;optimized;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_system-mt-1_48.so;debug;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_system-mt.so;general;-lpthread;general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libdl.so;
+BallDetection_LIB_DEPENDS:STATIC=general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalproxies.so;general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalsoap.so;general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/librttools.so;general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalthread.so;optimized;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_signals-mt-1_48.so;debug;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_signals-mt.so;optimized;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_program_options-mt-1_48.so;debug;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_program_options-mt.so;general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalvalue.so;general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libtinyxml.so;general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/librt.so;general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libqi.so;general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libalerror.so;optimized;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_filesystem-mt-1_48.so;debug;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_filesystem-mt.so;optimized;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_system-mt-1_48.so;debug;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_system-mt.so;optimized;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_thread-mt-1_48.so;debug;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_thread-mt.so;optimized;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_date_time-mt-1_48.so;debug;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_date_time-mt.so;optimized;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_system-mt-1_48.so;debug;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_system-mt.so;general;-lpthread;general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libdl.so;general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_highgui.so;general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_imgproc.so;general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_features2d.so;general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_flann.so;general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_core.so;
 
 //Boost date_time library (debug)
 Boost_DATE_TIME_LIBRARY_DEBUG:FILEPATH=/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libboost_date_time-mt.so
@@ -358,6 +358,21 @@ I_AM_A_ROBOT:BOOL=ON
 //DEPRECATED please use I_AM_A_ROBOT
 OE_CROSS_BUILD:BOOL=ON
 
+//The directory containing a CMake configuration file for OPENCV2_CORE.
+OPENCV2_CORE_DIR:PATH=/home/htellezb/qibuild-1.14.5/qibuild-1.14.3/cmake/qibuild/modules
+
+//The directory containing a CMake configuration file for OPENCV2_FEATURES2D.
+OPENCV2_FEATURES2D_DIR:PATH=/home/htellezb/qibuild-1.14.5/qibuild-1.14.3/cmake/qibuild/modules
+
+//The directory containing a CMake configuration file for OPENCV2_FLANN.
+OPENCV2_FLANN_DIR:PATH=/home/htellezb/qibuild-1.14.5/qibuild-1.14.3/cmake/qibuild/modules
+
+//The directory containing a CMake configuration file for OPENCV2_HIGHGUI.
+OPENCV2_HIGHGUI_DIR:PATH=/home/htellezb/qibuild-1.14.5/qibuild-1.14.3/cmake/qibuild/modules
+
+//The directory containing a CMake configuration file for OPENCV2_IMGPROC.
+OPENCV2_IMGPROC_DIR:PATH=/home/htellezb/qibuild-1.14.5/qibuild-1.14.3/cmake/qibuild/modules
+
 //Cleared.
 PTHREAD_DEFINITIONS:STRING=
 
@@ -419,6 +434,8 @@ _QI_USE_LIB_BALLDETECTION:STRING=
 
 _QI_USE_LIB_BALLDETECTION@ALCOMMON@BOOST:STRING=ALCOMMON;ALSOAP;RTTOOLS;ALTHREAD;BOOST_SIGNALS;BOOST_PROGRAM_OPTIONS;ALVALUE;TINYXML;RT;QI;ALERROR;BOOST;BOOST_FILESYSTEM;BOOST_THREAD;BOOST_SYSTEM;PTHREAD;DL
 
+_QI_USE_LIB_BALLDETECTION@OPENCV2_HIGHGUI@OPENCV2_IMGPROC@OPENCV2_CORE@OPENCV2_FEATURES2D:STRING=OPENCV2_HIGHGUI;OPENCV2_IMGPROC;OPENCV2_FEATURES2D;OPENCV2_FLANN;OPENCV2_CORE
+
 //Value Computed by CMake
 ballrecognition-module_BINARY_DIR:STATIC=/home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom
 
@@ -430,6 +447,36 @@ dl_LIB:FILEPATH=/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolcha
 
 //Cleared.
 dlfcn.h_INCLUDE:PATH=/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include
+
+//Cleared.
+opencv2/core/core.hpp_INCLUDE:PATH=/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include
+
+//Cleared.
+opencv2/features2d/features2d.hpp_INCLUDE:PATH=/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include
+
+//Cleared.
+opencv2/flann/flann.hpp_INCLUDE:PATH=/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include
+
+//Cleared.
+opencv2/highgui/highgui.hpp_INCLUDE:PATH=/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include
+
+//Cleared.
+opencv2/imgproc/imgproc.hpp_INCLUDE:PATH=/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include
+
+//Cleared.
+opencv_core_LIB:FILEPATH=/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_core.so
+
+//Cleared.
+opencv_features2d_LIB:FILEPATH=/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_features2d.so
+
+//Cleared.
+opencv_flann_LIB:FILEPATH=/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_flann.so
+
+//Cleared.
+opencv_highgui_LIB:FILEPATH=/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_highgui.so
+
+//Cleared.
+opencv_imgproc_LIB:FILEPATH=/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_imgproc.so
 
 //Cleared.
 pthread.h_INCLUDE:PATH=/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include
@@ -740,6 +787,29 @@ DL_PACKAGE_FOUND:INTERNAL=TRUE
 DL_SEARCHED:INTERNAL=TRUE
 GLIB2_DIR:INTERNAL=/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/usr/share/cmake/qibuild/modules
 GSTREAMER_DIR:INTERNAL=/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/usr/share/cmake/qibuild/modules
+OPENCV2_CORE_INCLUDE_DIRS:INTERNAL=/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include
+OPENCV2_CORE_LIBRARIES:INTERNAL=general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_core.so
+OPENCV2_CORE_PACKAGE_FOUND:INTERNAL=TRUE
+OPENCV2_CORE_SEARCHED:INTERNAL=TRUE
+OPENCV2_FEATURES2D_DEPENDS:INTERNAL=OPENCV2_CORE;OPENCV2_FLANN
+OPENCV2_FEATURES2D_INCLUDE_DIRS:INTERNAL=/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include
+OPENCV2_FEATURES2D_LIBRARIES:INTERNAL=general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_features2d.so
+OPENCV2_FEATURES2D_PACKAGE_FOUND:INTERNAL=TRUE
+OPENCV2_FEATURES2D_SEARCHED:INTERNAL=TRUE
+OPENCV2_FLANN_DEPENDS:INTERNAL=OPENCV2_CORE
+OPENCV2_FLANN_INCLUDE_DIRS:INTERNAL=/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include
+OPENCV2_FLANN_LIBRARIES:INTERNAL=general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_flann.so
+OPENCV2_FLANN_PACKAGE_FOUND:INTERNAL=TRUE
+OPENCV2_FLANN_SEARCHED:INTERNAL=TRUE
+OPENCV2_HIGHGUI_INCLUDE_DIRS:INTERNAL=/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include
+OPENCV2_HIGHGUI_LIBRARIES:INTERNAL=general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_highgui.so
+OPENCV2_HIGHGUI_PACKAGE_FOUND:INTERNAL=TRUE
+OPENCV2_HIGHGUI_SEARCHED:INTERNAL=TRUE
+OPENCV2_IMGPROC_DEPENDS:INTERNAL=OPENCV2_CORE
+OPENCV2_IMGPROC_INCLUDE_DIRS:INTERNAL=/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/include
+OPENCV2_IMGPROC_LIBRARIES:INTERNAL=general;/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/sysroot/usr/lib/libopencv_imgproc.so
+OPENCV2_IMGPROC_PACKAGE_FOUND:INTERNAL=TRUE
+OPENCV2_IMGPROC_SEARCHED:INTERNAL=TRUE
 //ADVANCED property for variable: PTHREAD_DEFINITIONS
 PTHREAD_DEFINITIONS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PTHREAD_EXECUTABLE
@@ -832,10 +902,22 @@ _Boost_USE_MULTITHREADED_LAST:INTERNAL=TRUE
 _QI_USE_LIB_BALLDETECTION-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: _QI_USE_LIB_BALLDETECTION@ALCOMMON@BOOST
 _QI_USE_LIB_BALLDETECTION@ALCOMMON@BOOST-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: _QI_USE_LIB_BALLDETECTION@OPENCV2_HIGHGUI@OPENCV2_IMGPROC@OPENCV2_CORE@OPENCV2_FEATURES2D
+_QI_USE_LIB_BALLDETECTION@OPENCV2_HIGHGUI@OPENCV2_IMGPROC@OPENCV2_CORE@OPENCV2_FEATURES2D-ADVANCED:INTERNAL=1
 _TESTS_RESULTS_FOLDER:INTERNAL=/home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-tests/results
 _dpkg_architecture:INTERNAL=_dpkg_architecture-NOTFOUND
 //ADVANCED property for variable: dlfcn.h_INCLUDE
 dlfcn.h_INCLUDE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: opencv2/core/core.hpp_INCLUDE
+opencv2/core/core.hpp_INCLUDE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: opencv2/features2d/features2d.hpp_INCLUDE
+opencv2/features2d/features2d.hpp_INCLUDE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: opencv2/flann/flann.hpp_INCLUDE
+opencv2/flann/flann.hpp_INCLUDE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: opencv2/highgui/highgui.hpp_INCLUDE
+opencv2/highgui/highgui.hpp_INCLUDE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: opencv2/imgproc/imgproc.hpp_INCLUDE
+opencv2/imgproc/imgproc.hpp_INCLUDE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pthread.h_INCLUDE
 pthread.h_INCLUDE-ADVANCED:INTERNAL=1
 qibuild_DIR:INTERNAL=/home/htellezb/qibuild-1.14.5/qibuild-1.14.3/cmake/qibuild

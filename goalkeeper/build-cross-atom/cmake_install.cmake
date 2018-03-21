@@ -1,54 +1,59 @@
-# Install script for directory: /home/ruiciro/SPL/EK-SPL/goalkeeper
+# Install script for directory: /home/htellezb/EK-SPL/goalkeeper
 
 # Set the install prefix
-IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  SET(CMAKE_INSTALL_PREFIX "/usr/local")
-ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)
-STRING(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
+if(NOT DEFINED CMAKE_INSTALL_PREFIX)
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
+endif()
+string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
 # Set the install configuration name.
-IF(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
-  IF(BUILD_TYPE)
-    STRING(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
+if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
+  if(BUILD_TYPE)
+    string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
-  ELSE(BUILD_TYPE)
-    SET(CMAKE_INSTALL_CONFIG_NAME "Debug")
-  ENDIF(BUILD_TYPE)
-  MESSAGE(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
-ENDIF(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
+  else()
+    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
+  endif()
+  message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
+endif()
 
 # Set the component getting installed.
-IF(NOT CMAKE_INSTALL_COMPONENT)
-  IF(COMPONENT)
-    MESSAGE(STATUS "Install component: \"${COMPONENT}\"")
-    SET(CMAKE_INSTALL_COMPONENT "${COMPONENT}")
-  ELSE(COMPONENT)
-    SET(CMAKE_INSTALL_COMPONENT)
-  ENDIF(COMPONENT)
-ENDIF(NOT CMAKE_INSTALL_COMPONENT)
+if(NOT CMAKE_INSTALL_COMPONENT)
+  if(COMPONENT)
+    message(STATUS "Install component: \"${COMPONENT}\"")
+    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")
+  else()
+    set(CMAKE_INSTALL_COMPONENT)
+  endif()
+endif()
 
 # Install shared libraries without execute permission?
-IF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  SET(CMAKE_INSTALL_SO_NO_EXE "1")
-ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
+if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
+  set(CMAKE_INSTALL_SO_NO_EXE "0")
+endif()
 
-IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "lib")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/naoqi" TYPE SHARED_LIBRARY FILES "/home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeRelink.dir/libgoalkeeper.so")
-  IF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/naoqi/libgoalkeeper.so" AND
+# Is this installation the result of a crosscompile?
+if(NOT DEFINED CMAKE_CROSSCOMPILING)
+  set(CMAKE_CROSSCOMPILING "ON")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xlibx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/naoqi" TYPE SHARED_LIBRARY FILES "/home/htellezb/EK-SPL/goalkeeper/build-cross-atom/CMakeFiles/CMakeRelink.dir/libgoalkeeper.so")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/naoqi/libgoalkeeper.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/naoqi/libgoalkeeper.so")
-    IF(CMAKE_INSTALL_DO_STRIP)
-      EXECUTE_PROCESS(COMMAND "/home/ruiciro/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/naoqi/libgoalkeeper.so")
-    ENDIF(CMAKE_INSTALL_DO_STRIP)
-  ENDIF()
-ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "lib")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/naoqi/libgoalkeeper.so")
+    endif()
+  endif()
+endif()
 
-IF(CMAKE_INSTALL_COMPONENT)
-  SET(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
-ELSE(CMAKE_INSTALL_COMPONENT)
-  SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
-ENDIF(CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT)
+  set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
+else()
+  set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
+endif()
 
-FILE(WRITE "/home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/${CMAKE_INSTALL_MANIFEST}" "")
-FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/ruiciro/SPL/EK-SPL/goalkeeper/build-cross-atom/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
-ENDFOREACH(file)
+string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
+       "${CMAKE_INSTALL_MANIFEST_FILES}")
+file(WRITE "/home/htellezb/EK-SPL/goalkeeper/build-cross-atom/${CMAKE_INSTALL_MANIFEST}"
+     "${CMAKE_INSTALL_MANIFEST_CONTENT}")

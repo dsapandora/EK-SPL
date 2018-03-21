@@ -58,11 +58,11 @@ void BallDetection::init()
     ////////////////////////////////////////////////////////////////////////////
     //Comenzaremos a hacer cambios aqui para buscar detectar pelotas
 
-    fState = fMemoryProxy.getData("redBallDetected");
-    fMemoryProxy.subscribeToEvent("redBallDetected", "BallDetection", "bwBallDetection");
+    // fState = fMemoryProxy.getData("redBallDetected");
+    // fMemoryProxy.subscribeToEvent("redBallDetected", "BallDetection", "bwBallDetection");
     fVideoDeviceProxy.setParam(18, 1);
-    qi::log::init();
-    atexit(qi::log::destroy);
+    // qi::log::init();
+    // atexit(qi::log::destroy);
   }
   catch (const AL::ALError& e) {
     qiLogError("BallDetection.init") << e.what() << std::endl;
@@ -75,7 +75,7 @@ void BallDetection::bwBallDetection(){
   /////////////////////////////////////////////////////////////////////////////////////
   
   /** Create a proxy to ALVideoDevice on the robot.*/
-  ALVideoDeviceProxy cameraProxy("169.254.35.27", 9559);
+  //ALVideoDeviceProxy cameraProxy("169.254.35.27", 9559);
 
   /** Subscribe a client image requiring 320*240 and BGR colorspace.*/
   const std::string clientName = fVideoDeviceProxy.subscribe("test", kQVGA, kBGRColorSpace, 30);
@@ -93,7 +93,7 @@ void BallDetection::bwBallDetection(){
   //* container. */
   //imgHeader.data = (uchar*) img[6].GetBinary();
   imgHeader.data = img->getData();
-  qiLogInfo("BallDetection.bwBallDetection") << "Getting image" << std::endl;
+  // qiLogInfo("BallDetection.bwBallDetection") << "Getting image" << std::endl;
 
   /** Tells to ALVideoDevice that it can give back the image buffer to the
     * driver. Optional after a getImageRemote but MANDATORY after a getImageLocal.*/
@@ -214,40 +214,58 @@ void BallDetection::bwBallDetection(){
   detector.detect(mask_3, keypoints_3);
   //cout << "Number of keypoints: " << keypoints_3.size() << endl;
 
-  //Conversion from keypoint 0 (v serves as a mask to indicate which keypoint) to points
-  vector<cv::Point_<float>> points;
-  vector<int> v {0};
-  cv::KeyPoint::convert(keypoints_3,points,v);
-  cout << "KeyPoint coordinates x: " << points.at(0).x << " y: " << points.at(0).y << endl;
+  float x_rad, y_rad;
+
+  value.arrayPush("Time");
+
+  if(keypoints_3.size()==0){
+
+    cout << "No keypoints detected" << endl;
+    x_rad = 30 * PI / 180;
+    y_rad = 20 * PI / 180;
+    vector<float> val = {x_rad, y_rad}; 
+    value.arrayPush(val);
+
+  }else{
+
+    //Conversion from keypoint 0 (v serves as a mask to indicate which keypoint) to points
+    vector<cv::Point_<float>> points;
+    vector<int> v {0};
+    cv::KeyPoint::convert(keypoints_3,points,v);
+    cout << "KeyPoint coordinates x: " << points.at(0).x << " y: " << points.at(0).y << endl;
   //Convertion from pixels to angular coordinates as explained on AlRedBallDetection->BallInfo->centerX,centerY
   //Get frame size and set center
-  Size size = frame.size();
-  cout << "Image size x: " << size.width << " y: " << size.height << endl;
-  float cX = size.width / 2.0;
-  float cY = size.height / 2.0;
+    Size size = frame.size();
+    cout << "Image size x: " << size.width << " y: " << size.height << endl;
+    float cX = size.width / 2.0;
+    float cY = size.height / 2.0;
   //Translation to match NAOqi coordinate system
-  float keyX = -(points.at(0).x - cX);
-  float keyY = points.at(0).y - cY;
-  cout << "KeyPoint NAOqi coordinates x: " << keyX << " y: " << keyY << endl;
+    float keyX = -(points.at(0).x - cX);
+    float keyY = points.at(0).y - cY;
+    cout << "KeyPoint NAOqi coordinates x: " << keyX << " y: " << keyY << endl;
   //Pixels->angular coordniates using trigonometry for x_ang and camera's HFOV for y_ang 
-  float x_rad = atan2(keyY,keyX);
-  float x_ang = x_rad * 180 / PI;
+    x_rad = atan2(keyY,keyX);
+    float x_ang = x_rad * 180 / PI;
   //Camera's HFOV for NAO v4.0 is 60.97°
   //DFOV 72.6°, HFOV 60.9°, VFOV 47.6°
   //Linear relation from pixels to angles.
-  float y_ang = -0.095 * keyX + 30.485;
-  float y_rad = y_ang * PI / 180;
+    float y_ang = -0.095 * keyX + 30.485;
+    y_rad = y_ang * PI / 180;
 
-  cout << "Angular (degrees) NAOqi coordinates CenterX: " << x_ang << " CenterY: " << y_ang << endl;
-  cout << "Angular (radians) NAOqi coordinates CenterX: " << x_rad << " CenterY: " << y_rad << endl;
+    cout << "Angular (degrees) NAOqi coordinates CenterX: " << x_ang << " CenterY: " << y_ang << endl;
+    cout << "Angular (radians) NAOqi coordinates CenterX: " << x_rad << " CenterY: " << y_rad << endl;
 
-  qiLogInfo("BallDetection.bwBallDetection") << "CenterX: " << x_rad << std::endl;
-  qiLogInfo("BallDetection.bwBallDetection") << "CenterY: " << y_rad << std::endl;
+    vector<float> val = {x_rad, y_rad}; 
+    value.arrayPush(val);
+
+  }
+
+  
+
+  // qiLogInfo("BallDetection.bwBallDetection") << "CenterX: " << x_rad << std::endl;
+  // qiLogInfo("BallDetection.bwBallDetection") << "CenterY: " << y_rad << std::endl;
 
   //The values used by vision.cpp are the angular coordinates in radians
-  value.arrayPush(x_rad);
-  value.arrayPush(y_rad);
-  //value.arrayPush(1);
 
   //-----------------------------------------------------------------------
 

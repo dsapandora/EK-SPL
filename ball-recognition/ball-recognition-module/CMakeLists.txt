@@ -15,3 +15,4 @@ qi_create_lib(BallDetection SHARED ${_srcs} SUBFOLDER naoqi)
 
 qi_use_lib(BallDetection ALCOMMON BOOST)
 
+qi_use_lib(BallDetection OPENCV2_HIGHGUI OPENCV2_IMGPROC OPENCV2_CORE OPENCV2_FEATURES2D)

@@ -1,4 +1,4 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "CMakeFiles/shooter.dir/shooter.cpp.o"
   "CMakeFiles/shooter.dir/main.cpp.o"
   "sdk/lib/naoqi/libshooter.pdb"
@@ -8,6 +8,6 @@ FILE(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/shooter.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/shooter.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
