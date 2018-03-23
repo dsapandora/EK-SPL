@@ -63,6 +63,11 @@ void BallDetection::init()
     fVideoDeviceProxy.setParam(18, 1);
     // qi::log::init();
     // atexit(qi::log::destroy);
+    while(true){
+      bwBallDetection();
+    }
+    
+    //fMemoryProxy.subscribeToEvent("LeftBumperPressed", "BallDetection", "LeftBumperPressed", "bwBallDetection");
   }
   catch (const AL::ALError& e) {
     qiLogError("BallDetection.init") << e.what() << std::endl;
@@ -70,6 +75,7 @@ void BallDetection::init()
 }
 
 void BallDetection::bwBallDetection(){
+  cout << "Finally some OpenCV!" << endl;
   //qiLogInfo("BallDetection.bwBallDetection") << "Executing method on red ball detected event" << std::endl;
   AL::ALCriticalSection section(fCallbackMutex);
   /////////////////////////////////////////////////////////////////////////////////////
@@ -79,33 +85,48 @@ void BallDetection::bwBallDetection(){
 
   /** Subscribe a client image requiring 320*240 and BGR colorspace.*/
   const std::string clientName = fVideoDeviceProxy.subscribe("test", kQVGA, kBGRColorSpace, 30);
+  cout << "clientName set" << endl;
 
   /** Create an cv::Mat header to wrap into an opencv image.*/
-  cv::Mat imgHeader = cv::Mat(cv::Size(320, 240), CV_8UC3);
+  //cv::Mat imgHeader = cv::Mat(cv::Size(320, 240), CV_8UC3);
+  cout << "imgHeader set" << endl;
 
   /** Create a OpenCV window to display the images. */
   // cv::namedWindow("images");
 
-  // ALValue img = fVideoDeviceProxy.getImageRemote(clientName);
+  //ALValue img = fVideoDeviceProxy.getImageLocal(clientName);
   ALImage* img = (ALImage*) fVideoDeviceProxy.getImageLocal(clientName);
+  cout << "img set" << endl;
 
   /** Access the image buffer (6th field) and assign it to the opencv image
   //* container. */
   //imgHeader.data = (uchar*) img[6].GetBinary();
-  imgHeader.data = img->getData();
+  printf("the val is: %p\n", img);
+  //ALValue aux = img->toALValue();
+  unsigned char* dataPointer = img->getData();
+  //imgHeader.data = img->getData();
+  cv::Mat imgHeader = cv::Mat(320, 240, CV_8UC3, dataPointer);
+  //imgHeader.data = dataPointer;
+  //imgHeader.data = (uchar*) aux[6].GetBinary();
+  //cout << imgHeader.data[6]  << endl;
+  cout << "access buffer" << endl;
   // qiLogInfo("BallDetection.bwBallDetection") << "Getting image" << std::endl;
 
   /** Tells to ALVideoDevice that it can give back the image buffer to the
     * driver. Optional after a getImageRemote but MANDATORY after a getImageLocal.*/
-  fVideoDeviceProxy.releaseImage(clientName);
+  //fVideoDeviceProxy.releaseImage(clientName);
+  cout << "release image" << endl;
 
   /** Display the iplImage on screen.*/
   //   cv::imshow("images", imgHeader);
 
   /** Cleanup.*/
-  fVideoDeviceProxy.unsubscribe(clientName);
+  //fVideoDeviceProxy.unsubscribe(clientName);
+  cout << "unsubscribe from camera" << endl;
 
   AL::ALValue value;
+
+  String img_path = "/home/nao/test.jpg";
 
   // //-----------------------------------------------------------------------
 
@@ -115,21 +136,27 @@ void BallDetection::bwBallDetection(){
   //Mat im_gray = imread(img_path, CV_LOAD_IMAGE_GRAYSCALE); 
 
   Mat frame = imgHeader;
+  //Mat frame = imread(img_path);
+  int theType = frame.type();
+  cout << "Frame type: " << theType << endl;
+  cout << "Frame set " << endl;
+  //cout << "Frame size= " << frame.size() << endl;
   Mat hsv;
   cvtColor(frame, hsv, CV_BGR2HSV); 
+  cout << "HSV set" << endl;
   
   //Threshold values are determined with calibration code
-  vector<int> lower_black = {0 ,0 , 60}; 
-  vector<int> upper_black = {179,145,145}; 
+  vector<int> lower_black = {73 ,0 , 10}; 
+  vector<int> upper_black = {147,86,115}; 
 
-  vector<int> lower_white = {0 , 0 , 116}; 
-  vector<int> upper_white = {179, 63, 212}; 
+  vector<int> lower_white = {0 , 0 , 138}; 
+  vector<int> upper_white = {158, 48, 255}; 
 
-  vector<int> lower_green = {84 , 155, 74}; 
-  vector<int> upper_green = {115, 214, 190}; 
+  vector<int> lower_green = {20 , 50, 34}; 
+  vector<int> upper_green = {65, 197, 213}; 
 
-  vector<int> lower_lines = {68, 0, 219}; 
-  vector<int> upper_lines = {155, 100, 255}; 
+  vector<int> lower_lines = {0, 4, 208};
+  vector<int> upper_lines = {179, 73, 255};
 
 
   Mat mask_1, mask_2, mask_green, mask_lines;
@@ -142,6 +169,8 @@ void BallDetection::bwBallDetection(){
   inRange(hsv, lower_green, upper_green, mask_green); 
 
   inRange(hsv, lower_lines, upper_lines, mask_lines); 
+
+  cout << "Masks set" << endl;
 
   Mat kernel = Mat::ones(5,5,CV_8U);
 
@@ -227,7 +256,7 @@ void BallDetection::bwBallDetection(){
     value.arrayPush(val);
 
   }else{
-
+    cout << "Keypoints detected" << endl;
     //Conversion from keypoint 0 (v serves as a mask to indicate which keypoint) to points
     vector<cv::Point_<float>> points;
     vector<int> v {0};
@@ -260,7 +289,8 @@ void BallDetection::bwBallDetection(){
 
   }
 
-  
+  fVideoDeviceProxy.releaseImage(clientName);
+  fVideoDeviceProxy.unsubscribe(clientName);
 
   // qiLogInfo("BallDetection.bwBallDetection") << "CenterX: " << x_rad << std::endl;
   // qiLogInfo("BallDetection.bwBallDetection") << "CenterY: " << y_rad << std::endl;
@@ -270,6 +300,7 @@ void BallDetection::bwBallDetection(){
   //-----------------------------------------------------------------------
 
   generateMicroEventBwBallDetected(value);
+
 }
 
 void BallDetection::generateMicroEventBwBallDetected(const AL::ALValue& value) {

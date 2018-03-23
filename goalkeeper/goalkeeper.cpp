@@ -50,7 +50,7 @@ void Goalkeeper::init()
     fMotionProxy = AL::ALMotionProxy(getParentBroker());
     fFrameManagerProxy = AL::ALFrameManagerProxy(getParentBroker());
     //fMemoryProxy.subscribeToMicroEvent("EKBallDetected", "Goalkeeper", "EKBallDetected", "ballDetected");
-    fMemoryProxy.subscribeToEvent("LeftBumperPressed", "Goalkeeper", "LefttBumperPressed", "leftBumperPressed");
+    fMemoryProxy.subscribeToEvent("LeftBumperPressed", "Goalkeeper", "LeftBumperPressed", "leftBumperPressed");
     fMotionProxy.setStiffnesses("Head", 0.7);
     fMotionProxy.setStiffnesses("Body", 0.7);
     //fPostureProxy.goToPosture("StandInit", 0.5f);

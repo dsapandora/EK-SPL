@@ -1,120 +1,62 @@
 The target system is: Linux -  - i486
-The host system is: Linux - 4.14.13-200.fc26.x86_64 - x86_64
-Determining if the include file pthread.h exists passed with the following output:
-Change Dir: /home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp
+The host system is: Linux - 3.13.0-24-generic - x86_64
+Determining if files pthread.h exist passed with the following output:
+Change Dir: /home/roboticaspl/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_95681/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_95681.dir/build.make CMakeFiles/cmTC_95681.dir/build
-gmake[1]: Entering directory '/home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_95681.dir/CheckIncludeFile.c.o
-/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD    -o CMakeFiles/cmTC_95681.dir/CheckIncludeFile.c.o   -c /home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_95681
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_95681.dir/link.txt --verbose=1
-/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc  --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD   -Wl,--sysroot,/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/  -rdynamic CMakeFiles/cmTC_95681.dir/CheckIncludeFile.c.o  -o cmTC_95681 
-gmake[1]: Leaving directory '/home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp'
-
-
-Determining if the function pthread_create exists in the pthread passed with the following output:
-Change Dir: /home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/gmake" "cmTC_69ecb/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_69ecb.dir/build.make CMakeFiles/cmTC_69ecb.dir/build
-gmake[1]: Entering directory '/home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_69ecb.dir/CheckFunctionExists.c.o
-/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_69ecb.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
-Linking C executable cmTC_69ecb
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_69ecb.dir/link.txt --verbose=1
-/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc  --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--sysroot,/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/  -rdynamic CMakeFiles/cmTC_69ecb.dir/CheckFunctionExists.c.o  -o cmTC_69ecb -lpthread 
-gmake[1]: Leaving directory '/home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp'
-
-
-The target system is: Linux -  - i486
-The host system is: Linux - 4.14.13-200.fc26.x86_64 - x86_64
-Determining if the include file pthread.h exists passed with the following output:
-Change Dir: /home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/gmake" "cmTC_d9177/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_d9177.dir/build.make CMakeFiles/cmTC_d9177.dir/build
-gmake[1]: Entering directory '/home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_d9177.dir/CheckIncludeFile.c.o
-/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD    -o CMakeFiles/cmTC_d9177.dir/CheckIncludeFile.c.o   -c /home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_d9177
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d9177.dir/link.txt --verbose=1
-/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc  --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD   -Wl,--sysroot,/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/  -rdynamic CMakeFiles/cmTC_d9177.dir/CheckIncludeFile.c.o  -o cmTC_d9177 
-gmake[1]: Leaving directory '/home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp'
+Run Build Command:/usr/bin/make "cmTryCompileExec1580736489/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1580736489.dir/build.make CMakeFiles/cmTryCompileExec1580736489.dir/build
+make[1]: se ingresa al directorio «/home/roboticaspl/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/roboticaspl/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1580736489.dir/CheckIncludeFiles.c.o
+/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD    -o CMakeFiles/cmTryCompileExec1580736489.dir/CheckIncludeFiles.c.o   -c /home/roboticaspl/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec1580736489
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1580736489.dir/link.txt --verbose=1
+/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD   -Wl,--sysroot,/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ CMakeFiles/cmTryCompileExec1580736489.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec1580736489 -rdynamic 
+make[1]: se sale del directorio «/home/roboticaspl/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp»
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
-Change Dir: /home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp
+Change Dir: /home/roboticaspl/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_10600/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_10600.dir/build.make CMakeFiles/cmTC_10600.dir/build
-gmake[1]: Entering directory '/home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_10600.dir/CheckFunctionExists.c.o
-/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_10600.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
-Linking C executable cmTC_10600
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_10600.dir/link.txt --verbose=1
-/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc  --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--sysroot,/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/  -rdynamic CMakeFiles/cmTC_10600.dir/CheckFunctionExists.c.o  -o cmTC_10600 -lpthread 
-gmake[1]: Leaving directory '/home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp'
-
-
-The target system is: Linux -  - i486
-The host system is: Linux - 4.14.13-200.fc26.x86_64 - x86_64
-Determining if the include file pthread.h exists passed with the following output:
-Change Dir: /home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/gmake" "cmTC_d59d4/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_d59d4.dir/build.make CMakeFiles/cmTC_d59d4.dir/build
-gmake[1]: Entering directory '/home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_d59d4.dir/CheckIncludeFile.c.o
-/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD    -o CMakeFiles/cmTC_d59d4.dir/CheckIncludeFile.c.o   -c /home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_d59d4
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d59d4.dir/link.txt --verbose=1
-/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc  --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD   -Wl,--sysroot,/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/  -rdynamic CMakeFiles/cmTC_d59d4.dir/CheckIncludeFile.c.o  -o cmTC_d59d4 
-gmake[1]: Leaving directory '/home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp'
+Run Build Command:/usr/bin/make "cmTryCompileExec1257818212/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1257818212.dir/build.make CMakeFiles/cmTryCompileExec1257818212.dir/build
+make[1]: se ingresa al directorio «/home/roboticaspl/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/roboticaspl/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1257818212.dir/CheckFunctionExists.c.o
+/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec1257818212.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1257818212
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1257818212.dir/link.txt --verbose=1
+/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--sysroot,/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ CMakeFiles/cmTryCompileExec1257818212.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1257818212 -rdynamic -lpthread 
+make[1]: se sale del directorio «/home/roboticaspl/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp»
 
 
-Determining if the function pthread_create exists in the pthread passed with the following output:
-Change Dir: /home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp
+Determining if files pthread.h exist passed with the following output:
+Change Dir: /home/roboticaspl/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_5df99/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_5df99.dir/build.make CMakeFiles/cmTC_5df99.dir/build
-gmake[1]: Entering directory '/home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_5df99.dir/CheckFunctionExists.c.o
-/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_5df99.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
-Linking C executable cmTC_5df99
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5df99.dir/link.txt --verbose=1
-/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc  --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--sysroot,/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/  -rdynamic CMakeFiles/cmTC_5df99.dir/CheckFunctionExists.c.o  -o cmTC_5df99 -lpthread 
-gmake[1]: Leaving directory '/home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp'
-
-
-The target system is: Linux -  - i486
-The host system is: Linux - 4.14.13-200.fc26.x86_64 - x86_64
-Determining if the include file pthread.h exists passed with the following output:
-Change Dir: /home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/gmake" "cmTC_3430a/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_3430a.dir/build.make CMakeFiles/cmTC_3430a.dir/build
-gmake[1]: Entering directory '/home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_3430a.dir/CheckIncludeFile.c.o
-/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD    -o CMakeFiles/cmTC_3430a.dir/CheckIncludeFile.c.o   -c /home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_3430a
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3430a.dir/link.txt --verbose=1
-/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc  --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD   -Wl,--sysroot,/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/  -rdynamic CMakeFiles/cmTC_3430a.dir/CheckIncludeFile.c.o  -o cmTC_3430a 
-gmake[1]: Leaving directory '/home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp'
+Run Build Command:/usr/bin/make "cmTryCompileExec1747087653/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1747087653.dir/build.make CMakeFiles/cmTryCompileExec1747087653.dir/build
+make[1]: se ingresa al directorio «/home/roboticaspl/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/roboticaspl/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1747087653.dir/CheckIncludeFiles.c.o
+/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD    -o CMakeFiles/cmTryCompileExec1747087653.dir/CheckIncludeFiles.c.o   -c /home/roboticaspl/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec1747087653
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1747087653.dir/link.txt --verbose=1
+/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD   -Wl,--sysroot,/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ CMakeFiles/cmTryCompileExec1747087653.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec1747087653 -rdynamic 
+make[1]: se sale del directorio «/home/roboticaspl/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp»
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
-Change Dir: /home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp
+Change Dir: /home/roboticaspl/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_0329f/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_0329f.dir/build.make CMakeFiles/cmTC_0329f.dir/build
-gmake[1]: Entering directory '/home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_0329f.dir/CheckFunctionExists.c.o
-/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_0329f.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
-Linking C executable cmTC_0329f
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0329f.dir/link.txt --verbose=1
-/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//cross/bin/i686-aldebaran-linux-gnu-gcc  --sysroot /home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--sysroot,/home/htellezb/Aldebaran-software/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/  -rdynamic CMakeFiles/cmTC_0329f.dir/CheckFunctionExists.c.o  -o cmTC_0329f -lpthread 
-gmake[1]: Leaving directory '/home/htellezb/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp'
+Run Build Command:/usr/bin/make "cmTryCompileExec2932628198/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2932628198.dir/build.make CMakeFiles/cmTryCompileExec2932628198.dir/build
+make[1]: se ingresa al directorio «/home/roboticaspl/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp»
+/usr/bin/cmake -E cmake_progress_report /home/roboticaspl/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2932628198.dir/CheckFunctionExists.c.o
+/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec2932628198.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2932628198
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2932628198.dir/link.txt --verbose=1
+/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5/cross/bin/i686-aldebaran-linux-gnu-gcc   --sysroot /home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ -pipe -fomit-frame-pointer -fno-align-jumps -fno-align-functions -fno-align-labels -fno-align-loops -m32 -mtune=generic -DOE_CROSS_BUILD -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,--sysroot,/home/roboticaspl/SPL/linux64-nao-atom-cross-toolchain-1.14.5//sysroot/ CMakeFiles/cmTryCompileExec2932628198.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2932628198 -rdynamic -lpthread 
+make[1]: se sale del directorio «/home/roboticaspl/EK-SPL/ball-recognition/ball-recognition-module/build-cross-atom/CMakeFiles/CMakeTmp»
 
 

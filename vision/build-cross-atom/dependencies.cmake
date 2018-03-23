@@ -4,7 +4,7 @@
 #############################################
 
 # Add path to CMake framework path if necessary:
-set(_qibuild_path "/home/htellezb/qibuild-1.14.5/qibuild-1.14.3/cmake")
+set(_qibuild_path "/home/roboticaspl/SPL/qibuild-1.14.3/cmake")
 list(FIND CMAKE_MODULE_PATH "${_qibuild_path}" _found)
 if(_found STREQUAL "-1")
   # Prefer cmake files matching  current qibuild installation

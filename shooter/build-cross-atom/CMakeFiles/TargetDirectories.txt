@@ -1,7 +1,1 @@
-/home/htellezb/EK-SPL/shooter/build-cross-atom/CMakeFiles/install/strip.dir
-/home/htellezb/EK-SPL/shooter/build-cross-atom/CMakeFiles/edit_cache.dir
-/home/htellezb/EK-SPL/shooter/build-cross-atom/CMakeFiles/shooter.dir
-/home/htellezb/EK-SPL/shooter/build-cross-atom/CMakeFiles/rebuild_cache.dir
-/home/htellezb/EK-SPL/shooter/build-cross-atom/CMakeFiles/list_install_components.dir
-/home/htellezb/EK-SPL/shooter/build-cross-atom/CMakeFiles/install/local.dir
-/home/htellezb/EK-SPL/shooter/build-cross-atom/CMakeFiles/install.dir
+/home/roboticaspl/EK-SPL/shooter/build-cross-atom/CMakeFiles/shooter.dir
