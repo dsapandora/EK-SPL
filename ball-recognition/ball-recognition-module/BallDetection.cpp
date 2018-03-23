@@ -55,6 +55,7 @@ void BallDetection::init()
     fMemoryProxy = AL::ALMemoryProxy(getParentBroker());
     fMotionProxy = AL::ALMotionProxy(getParentBroker());
     fVideoDeviceProxy = AL::ALVideoDeviceProxy(getParentBroker());
+    boost::shared_ptr<ALVideoDeviceProxy> cameraProxy = boost::shared_ptr<ALVideoDeviceProxy>(new ALVideoDeviceProxy(getParentBroker()));
     ////////////////////////////////////////////////////////////////////////////
     //Comenzaremos a hacer cambios aqui para buscar detectar pelotas
 
@@ -63,9 +64,13 @@ void BallDetection::init()
     fVideoDeviceProxy.setParam(18, 1);
     // qi::log::init();
     // atexit(qi::log::destroy);
-    while(true){
-      bwBallDetection();
-    }
+    //bwBallDetection();
+
+    string nameId = "BallDetection";
+    int resolution = kQVGA;
+    int colorSpace = kBGRColorSpace;
+    int fps = 30;
+    nameId = cameraProxy->subscribe(nameId, resolution, colorSpace, fps);
     
     //fMemoryProxy.subscribeToEvent("LeftBumperPressed", "BallDetection", "LeftBumperPressed", "bwBallDetection");
   }
